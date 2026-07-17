@@ -106,7 +106,7 @@ export default function Home() {
       <section className="section credentialsSection" id="credentials">
         <header className="sectionHeader compact">
           <p>— Section 03 · Credentials</p>
-          <h2>수상, 활동 및 <em>자격</em></h2>
+          <h2>수상 및 <em>자격</em></h2>
           <p className="sectionIntro">교육 전문성과 콘텐츠 제작 역량을 증명하는 주요 활동과 기록입니다.</p>
         </header>
         <div className="credentials">
@@ -118,22 +118,26 @@ export default function Home() {
           <p>CERTIFICATIONS</p><h2>자격</h2>
           <ul><li>생성형 AI 교육지도사 / AI 리터러시 강사</li><li>KPC 그래픽기술자격 그래픽마스터</li><li>컴퓨터그래픽스운용기능사</li></ul>
           </div>
-          <div className="credentialBlock coralBlock">
-          <p>BOOKS</p><h2>출간 저서</h2>
-          <ul><li>『한 권으로 끝내는 AI 자동화』 공저<br /><small>주간 베스트셀러 선정</small></li><li>『AI 광고 제작의 모든 것』 전자책 공저</li></ul>
-          </div>
+        </div>
+      </section>
+
+      <section className="section booksSection" id="books">
+        <header className="sectionHeader compact"><p>— Section 04 · Books</p><h2>출간 <em>저서</em></h2><p className="sectionIntro">생성형 AI 활용 경험과 실무 노하우를 책으로 전합니다.</p></header>
+        <div className="bookGrid">
+          <article><span>BOOK 01</span><h3>『한 권으로 끝내는<br />AI 자동화』</h3><p>공저 · 주간 베스트셀러 선정</p></article>
+          <article><span>BOOK 02</span><h3>『AI 광고 제작의<br />모든 것』</h3><p>전자책 공저</p></article>
         </div>
       </section>
 
       <section className="section programs" id="programs">
-        <header className="sectionHeader compact"><p>— Section 04 · Programs</p><h2>핵심 프로그램 <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 세 가지 축을 유연하게 구성합니다.</p></header>
+        <header className="sectionHeader compact"><p>— Section 05 · Programs</p><h2>핵심 프로그램 <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 세 가지 축을 유연하게 구성합니다.</p></header>
         <div className="programGrid">
           {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{index === 0 ? "✦" : index === 1 ? "◌" : "↗"}</div><h3>{title}</h3><p>{desc}</p></article>)}
         </div>
       </section>
 
       <section className="section works" id="works">
-        <header className="sectionHeader compact"><p>— Section 05 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
+        <header className="sectionHeader compact"><p>— Section 06 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
         <div className="workGrid">
           <article><div className="workVisual workA"><span>BRAND<br />WITH AI</span></div><p>수강생 A</p><h3>AI 활용 브랜딩 포트폴리오</h3></article>
           <article><div className="workVisual workB"><span>SHORT<br />FORM</span></div><p>수강생 B</p><h3>숏폼 마케팅 영상 시리즈</h3></article>
