@@ -125,8 +125,8 @@ export default function Home() {
       <section className="section booksSection" id="books">
         <header className="sectionHeader compact"><p>— Section 04 · Books</p><h2>출간 <em>저서</em></h2><p className="sectionIntro">생성형 AI 활용 경험과 실무 노하우를 책으로 전합니다.</p></header>
         <div className="bookGrid">
-          <article><span>BOOK 01</span><h3>『한 권으로 끝내는<br />AI 자동화』</h3><p>공저 · 주간 베스트셀러 선정</p></article>
-          <article><span>BOOK 02</span><h3>『AI 광고 제작의<br />모든 것』</h3><p>전자책 공저</p></article>
+          <article><div className="bookCover"><img src="/books/ai-automation.jpg" alt="한 권으로 끝내는 AI 자동화 책 표지" /></div><div className="bookInfo"><span>BOOK 01</span><h3>『한 권으로 끝내는 AI 자동화』</h3><p>공저 · 주간 베스트셀러 선정</p></div></article>
+          <article><div className="bookCover"><img src="/books/ai-advertising.png" alt="AI 광고 제작의 모든 것 전자책 표지" /></div><div className="bookInfo"><span>BOOK 02</span><h3>『AI 광고 제작의 모든 것』</h3><p>전자책 공저</p></div></article>
         </div>
       </section>
 
