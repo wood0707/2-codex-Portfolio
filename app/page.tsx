@@ -35,6 +35,7 @@ const programs = [
 export default function Home() {
   const [sent, setSent] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [inquiryOpen, setInquiryOpen] = useState(false);
 
   function submitInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -51,7 +52,7 @@ export default function Home() {
         <div className={`navLinks ${menuOpen ? "open" : ""}`}>
           <a href="#top" onClick={() => setMenuOpen(false)}>소개</a><a href="#skills" onClick={() => setMenuOpen(false)}>강의</a>
           <a href="#programs" onClick={() => setMenuOpen(false)}>커리큘럼</a><a href="#works" onClick={() => setMenuOpen(false)}>포트폴리오</a>
-          <a className="navCta" href="#contact" onClick={() => setMenuOpen(false)}>문의하기</a>
+          <button className="navCta navInquiry" type="button" onClick={() => { setMenuOpen(false); setInquiryOpen(true); }}>문의하기</button>
         </div>
       </nav>
 
@@ -66,7 +67,7 @@ export default function Home() {
           </h1>
           <p className="heroText">생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 자동화와 바이브코딩까지. 기술을 나열하는 교육이 아닌, 현장에서 바로 활용하는 경험을 설계합니다.</p>
           <div className="heroActions">
-            <a className="primaryBtn" href="#contact">강의 문의하기</a>
+            <button className="primaryBtn" type="button" onClick={() => setInquiryOpen(true)}>강의 문의하기</button>
             <a className="textBtn" href="#programs">프로그램 보기 <span>→</span></a>
           </div>
         </div>
@@ -139,10 +140,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact" id="contact">
-        <div className="contactLead">
+      <section className="finalCta" id="contact">
+        <span className="ctaOrb ctaOrbLeft" aria-hidden="true" />
+        <span className="ctaOrb ctaOrbRight" aria-hidden="true" />
+        <div className="finalCtaInner">
+          <h2><span>기술의 나열이 아닌</span><span><em>실무 워크플로우</em>를</span><span>지금 시작하세요</span></h2>
+          <p>학교 · 기업 · 개인 모두 맞춤 커리큘럼으로 진행합니다</p>
+          <div className="finalCtaActions">
+            <button type="button" onClick={() => setInquiryOpen(true)}>강의 문의하기</button>
+            <a href="#programs">커리큘럼 보기 <span>→</span></a>
+          </div>
+        </div>
+      </section>
+
+      {inquiryOpen && <div className="modalBackdrop" role="presentation" onMouseDown={() => setInquiryOpen(false)}>
+        <section className="contact contactModal" role="dialog" aria-modal="true" aria-labelledby="inquiry-title" onMouseDown={(event) => event.stopPropagation()}>
+          <button className="modalClose" type="button" aria-label="문의 창 닫기" onClick={() => setInquiryOpen(false)}>×</button>
+          <div className="contactLead">
           <p>— Contact</p>
-          <h2>강의 문의</h2>
+          <h2 id="inquiry-title">강의 문의</h2>
           <p>교육 목표에 맞게 커리큘럼을 구성해 드립니다. 24시간 내 연락드리겠습니다.</p>
           <div className="contactBenefits">
             <article><span>↯</span><div><strong>빠른 답변</strong><small>24시간 내 답변</small></div></article>
@@ -165,8 +181,9 @@ export default function Home() {
           <label>문의 내용<textarea name="message" required rows={5} placeholder="교육 목적, 인원, 희망 일정 등을 자유롭게 적어주세요" /></label>
           <button type="submit">문의 보내기 <span>→</span></button>
           {sent && <p className="formMessage" role="status">문의가 접수되었습니다. 확인 후 연락드리겠습니다.</p>}
-        </form>
-      </section>
+          </form>
+        </section>
+      </div>}
 
       <footer><a className="brand" href="#top">OH YOUNGJOO · AI</a><p>AI Content Educator · Content Director</p><small>© 2026 오영주. All rights reserved.</small></footer>
     </main>
