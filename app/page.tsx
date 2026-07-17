@@ -34,6 +34,7 @@ const programs = [
 
 export default function Home() {
   const [sent, setSent] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function submitInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -44,10 +45,13 @@ export default function Home() {
     <main>
       <nav className="nav">
         <a className="brand" href="#top" aria-label="처음으로">OH YOUNGJOO · AI</a>
-        <div className="navLinks">
-          <a href="#top">소개</a><a href="#skills">강의</a>
-          <a href="#programs">커리큘럼</a><a href="#works">포트폴리오</a>
-          <a className="navCta" href="#contact">문의하기</a>
+        <button className="menuToggle" type="button" aria-label="메뉴 열기" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+          <span /><span /><span />
+        </button>
+        <div className={`navLinks ${menuOpen ? "open" : ""}`}>
+          <a href="#top" onClick={() => setMenuOpen(false)}>소개</a><a href="#skills" onClick={() => setMenuOpen(false)}>강의</a>
+          <a href="#programs" onClick={() => setMenuOpen(false)}>커리큘럼</a><a href="#works" onClick={() => setMenuOpen(false)}>포트폴리오</a>
+          <a className="navCta" href="#contact" onClick={() => setMenuOpen(false)}>문의하기</a>
         </div>
       </nav>
 
