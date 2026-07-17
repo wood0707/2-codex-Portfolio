@@ -27,9 +27,10 @@ const experiences = [
 ];
 
 const programs = [
-  ["PROGRAM 01", "생성형 AI 기초", "프롬프트 엔지니어링 및 리터러시 입문"],
-  ["PROGRAM 02", "콘텐츠 제작", "AI 기반 영상 제작 및 퍼스널 브랜딩"],
-  ["PROGRAM 03", "업무 자동화", "생성형 AI 활용 업무 생산성 극대화"],
+  ["PROGRAM 01", "AI 기반 업무 효율화", "문서 작성과 반복 업무를 간소화하고, AI 기반의 실무 프로세스를 구축하는 교육입니다."],
+  ["PROGRAM 02", "AI 콘텐츠 기획 및 제작", "생각을 이미지와 콘텐츠로 구체화하는 제작 교육입니다."],
+  ["PROGRAM 03", "AI 영상·숏폼 제작", "기획부터 이미지, 영상, 음성, 편집까지 완성하는 실습 교육입니다."],
+  ["PROGRAM 04", "AI 광고·브랜드 마케팅", "브랜드 홍보에 필요한 광고 콘텐츠와 시각 결과물을 제작합니다."],
 ];
 
 export default function Home() {
@@ -130,9 +131,9 @@ export default function Home() {
       </section>
 
       <section className="section programs" id="programs">
-        <header className="sectionHeader compact"><p>— Section 05 · Programs</p><h2>핵심 프로그램 <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 세 가지 축을 유연하게 구성합니다.</p></header>
+        <header className="sectionHeader compact"><p>— Section 05 · Programs</p><h2>핵심 프로그램 <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
         <div className="programGrid">
-          {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{index === 0 ? "✦" : index === 1 ? "◌" : "↗"}</div><h3>{title}</h3><p>{desc}</p></article>)}
+          {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{["✦", "◌", "↗", "◎"][index]}</div><h3>{title}</h3><p>{desc}</p></article>)}
         </div>
       </section>
 
