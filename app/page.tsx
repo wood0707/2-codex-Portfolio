@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <main>
       <nav className="nav">
-        <a className="brand" href="#top" aria-label="처음으로">OH YOUNGJOO · AI</a>
+        <a className="brand topBrand" href="#top" aria-label="처음으로">OH YOUNG JOO · 생성형 AI 활용 전문 강사</a>
         <button className="menuToggle" type="button" aria-label="메뉴 열기" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
           <span /><span /><span />
         </button>
@@ -63,7 +63,7 @@ export default function Home() {
           <p className="eyebrow">GENERATIVE AI EDUCATOR · CONTENT DIRECTOR</p>
           <h1>
             <span className="coral">생각을 콘텐츠로,</span>
-            <span>콘텐츠를 성과로 만드는</span>
+            <span className="heroMiddle">콘텐츠를 성과로 만드는</span>
             <span className="lavender">생성형 AI 교육 전문가</span>
           </h1>
           <p className="heroText">생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 자동화와 바이브코딩까지. 기술을 나열하는 교육이 아닌, 현장에서 바로 활용하는 경험을 설계합니다.</p>
