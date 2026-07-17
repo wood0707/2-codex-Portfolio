@@ -3,12 +3,12 @@
 import { FormEvent, useState } from "react";
 
 const skills = [
-  ["01", "생성형 AI 콘텐츠", "생성형 AI 기반 콘텐츠 제작 교육 전문"],
-  ["02", "퍼스널 브랜딩", "네임 & 로고 기획 제작"],
-  ["03", "AI 영상 제작", "숏폼 콘텐츠 및 AI 영상 제작"],
-  ["04", "프롬프트", "프롬프트 엔지니어링"],
-  ["05", "업무 자동화", "업무 생산성 자동화"],
-  ["06", "바이브코딩", "웹페이지, 랜딩페이지 등"],
+  "생성형 AI 콘텐츠 제작 교육",
+  "퍼스널 브랜딩 · 로고 기획",
+  "숏폼 콘텐츠 · AI 영상 제작",
+  "프롬프트 엔지니어링",
+  "업무 생산성 자동화",
+  "바이브코딩 · 웹페이지 제작",
 ];
 
 const experiences = [
@@ -74,14 +74,13 @@ export default function Home() {
       </section>
 
       <section className="section skillsSection" id="skills">
-        <header className="sectionHeader">
-          <p>— Section 01 · Expertise</p>
-          <h2>핵심 역량 및<br /><em>교육 분야</em></h2>
-          <p className="sectionIntro">도구를 배우는 데서 멈추지 않고, 각자의 업무와 브랜드에 연결되는 실행 가능한 워크플로우를 만듭니다.</p>
+        <header className="skillsHeader">
+          <h2>핵심 역량 및 교육 분야</h2>
+          <p>01 / Expertise</p>
         </header>
         <div className="skillGrid">
-          {skills.map(([no, title, desc]) => (
-            <article className="skillCard" key={no}><span>{no}</span><h3>{title}</h3><p>{desc}</p><i>↗</i></article>
+          {skills.map((skill) => (
+            <article className="skillCard" key={skill}><span aria-hidden="true" /><h3>{skill}</h3></article>
           ))}
         </div>
       </section>
