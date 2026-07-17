@@ -78,9 +78,9 @@ export default function Home() {
       </section>
 
       <section className="section skillsSection" id="skills">
-        <header className="skillsHeader">
+        <header className="sectionHeader compact skillsHeader">
+          <p>— Section 01 Core Competencies</p>
           <h2>핵심 역량 및 교육 분야</h2>
-          <p>01 / Expertise</p>
         </header>
         <div className="skillGrid">
           {skills.map((skill) => (
