@@ -99,18 +99,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section credentials">
-        <div className="credentialBlock">
+      <section className="section credentialsSection" id="credentials">
+        <header className="sectionHeader compact">
+          <p>— Section 03 · Credentials</p>
+          <h2>수상, 활동 및 <em>자격</em></h2>
+          <p className="sectionIntro">교육 전문성과 콘텐츠 제작 역량을 증명하는 주요 활동과 기록입니다.</p>
+        </header>
+        <div className="credentials">
+          <div className="credentialBlock">
           <p>AWARDS & ACTIVITIES</p><h2>수상 및 활동</h2>
           <ul><li>인공지능 콘텐츠 강사 경진대회 &apos;대상&apos;</li><li>대한민국 AI 영상제 &apos;최우수상&apos;</li><li>SIAFF AI 영화제 제3회 심사위원</li><li>고양영상미디어 지역 커뮤니티 [APS] 대표</li></ul>
-        </div>
-        <div className="credentialBlock lavenderBlock">
+          </div>
+          <div className="credentialBlock lavenderBlock">
           <p>CERTIFICATIONS</p><h2>자격</h2>
           <ul><li>생성형 AI 교육지도사 / AI 리터러시 강사</li><li>KPC 그래픽기술자격 그래픽마스터</li><li>컴퓨터그래픽스운용기능사</li></ul>
-        </div>
-        <div className="credentialBlock coralBlock">
+          </div>
+          <div className="credentialBlock coralBlock">
           <p>BOOKS</p><h2>출간 저서</h2>
           <ul><li>『한 권으로 끝내는 AI 자동화』 공저<br /><small>주간 베스트셀러 선정</small></li><li>『AI 광고 제작의 모든 것』 전자책 공저</li></ul>
+          </div>
         </div>
       </section>
 
@@ -130,12 +137,31 @@ export default function Home() {
       </section>
 
       <section className="contact" id="contact">
-        <div className="contactLead"><p>— Contact</p><h2>아이디어를<br /><em>성과로 바꾸는 교육,</em><br />함께 시작해요.</h2><p>기관·학교·기업의 목적에 맞춰 커리큘럼을 구성합니다.</p></div>
+        <div className="contactLead">
+          <p>— Contact</p>
+          <h2>강의 문의</h2>
+          <p>교육 목표에 맞게 커리큘럼을 구성해 드립니다. 24시간 내 연락드리겠습니다.</p>
+          <div className="contactBenefits">
+            <article><span>↯</span><div><strong>빠른 답변</strong><small>24시간 내 답변</small></div></article>
+            <article><span>⌘</span><div><strong>맞춤 설계</strong><small>목표에 맞게 구성</small></div></article>
+            <article><span>▥</span><div><strong>전국 출장</strong><small>학교·기업 방문 가능</small></div></article>
+          </div>
+        </div>
         <form onSubmit={submitInquiry} className="contactForm">
-          <label>성함/기관명<input name="name" required placeholder="성함 또는 기관명을 입력해 주세요" /></label>
-          <label>문의 내용<textarea name="message" required rows={5} placeholder="교육 목적, 인원, 희망 일정 등을 적어주세요" /></label>
-          <button type="submit">문의하기 <span>→</span></button>
-          {sent && <p className="formMessage" role="status">문의 내용이 작성되었습니다. 연락처 연동 전 미리보기 상태입니다.</p>}
+          <div className="formRow">
+            <label>이름 *<input name="name" required placeholder="홍길동" /></label>
+            <label>연락처 *<input name="phone" required placeholder="010-0000-0000" /></label>
+          </div>
+          <label>소속<input name="organization" placeholder="기업 · 기관 · 학교 · 개인" /></label>
+          <label>관심 프로그램 *
+            <select name="program" required defaultValue="">
+              <option value="" disabled>선택해 주세요</option>
+              <option>생성형 AI 기초</option><option>콘텐츠 제작</option><option>업무 자동화</option><option>맞춤 교육</option>
+            </select>
+          </label>
+          <label>문의 내용<textarea name="message" required rows={5} placeholder="교육 목적, 인원, 희망 일정 등을 자유롭게 적어주세요" /></label>
+          <button type="submit">문의 보내기 <span>→</span></button>
+          {sent && <p className="formMessage" role="status">문의가 접수되었습니다. 확인 후 연락드리겠습니다.</p>}
         </form>
       </section>
 
