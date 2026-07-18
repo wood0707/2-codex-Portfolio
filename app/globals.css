@@ -123,6 +123,13 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroText { max-width:680px; font-size:18px; font-weight:700; }
 .heroKeywords { margin-top:16px; font-size:18px; font-weight:500; }
 @media (max-width:560px) { .heroCopy .eyebrow{font-size:11px}.heroRole{margin:48px 0 13px;font-size:18px}.heroText{font-size:15px}.heroKeywords{margin-top:14px;font-size:15px} }
+.heroProfileBar { position:relative; z-index:2; display:grid; grid-template-columns:minmax(260px,.8fr) minmax(420px,1.5fr) minmax(420px,1.35fr); align-items:center; gap:34px; margin:auto -4.3vw 0; padding:26px 4.3vw 28px; border-top:1px solid rgba(221,216,210,.72); background:rgba(255,255,255,.88); backdrop-filter:blur(10px); }
+.heroProfileBar .heroRole,.heroProfileBar .heroText,.heroProfileBar .heroKeywords { margin:0; padding-left:0; }
+.heroProfileBar .heroRole { font-size:20px; }
+.heroProfileBar .heroText { max-width:none; font-size:15px; line-height:1.75; }
+.heroProfileBar .heroKeywords { justify-self:end; font-size:14px; line-height:1.7; }
+@media (max-width:1100px) { .heroProfileBar{grid-template-columns:minmax(220px,.8fr) minmax(0,1.5fr)}.heroProfileBar .heroKeywords{grid-column:1 / -1;justify-self:start} }
+@media (max-width:560px) { .heroProfileBar{grid-template-columns:1fr;gap:12px;margin-top:auto;padding:22px}.heroProfileBar .heroRole{font-size:18px}.heroProfileBar .heroText{font-size:14px}.heroProfileBar .heroKeywords{grid-column:auto;font-size:13px} }
 .topBrand { letter-spacing:.04em; }
 @media (max-width:560px) { .topBrand{letter-spacing:.02em} }
 .reviewsSection { background:#fff; }
