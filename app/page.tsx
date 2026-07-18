@@ -43,9 +43,9 @@ const studentWorks = [
   ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `${index < 4 ? "숏폼 씬 구성" : "작품"} ${String(index + 1).padStart(2, "0")}` })),
 ];
 
-const videoWorks = Array.from({ length: 6 }, (_, index) => ({
-  src: `/student-videos/video-${String(index + 1).padStart(2, "0")}.mp4`,
-  title: `AI 영상 작품 ${String(index + 1).padStart(2, "0")}`,
+const videoWorks = [1, 2, 3, 6].map((number) => ({
+  src: `/student-videos/video-${String(number).padStart(2, "0")}.mp4`,
+  title: `AI 영상 작품 ${String(number).padStart(2, "0")}`,
 }));
 
 const reviews = [
