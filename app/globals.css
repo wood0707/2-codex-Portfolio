@@ -105,3 +105,4 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 @media (max-width:560px) { .worksCarousel{margin:0 -22px}.worksTrack{gap:14px;animation-duration:58s}.workCard{width:76vw}.workCard:first-child{margin-left:14px}.workCard>h3{font-size:16px}@keyframes worksMarquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}} }
 @media (prefers-reduced-motion:reduce) { .worksTrack{animation:none;overflow-x:auto}.workImage img{transition:none} }
 .workImage img { object-fit:contain; object-position:center center; }
+.workImage img[src$="brand-03.png"] { width:84%; height:84%; margin:8% auto; }
