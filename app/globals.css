@@ -141,10 +141,14 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .programCard { transition:transform .35s ease,box-shadow .35s ease; }
 .programCard:hover { transform:translateY(-7px); box-shadow:0 20px 40px rgba(27,24,45,.1); }
 .programIcon { animation:programFloat 4.6s ease-in-out infinite; }
+.programIcon::after { content:""; position:absolute; inset:50% auto auto 50%; width:92px; height:92px; border:1px solid currentColor; border-radius:50%; opacity:0; transform:translate(-50%,-50%) scale(.35); transition:opacity .3s ease,transform .55s cubic-bezier(.2,.8,.2,1); }
+.programCard:hover .programIcon { animation:programPop .72s cubic-bezier(.2,.85,.25,1) both; filter:contrast(1.08); }
+.programCard:hover .programIcon::after { opacity:.28; transform:translate(-50%,-50%) scale(1.15); }
 .programCard:nth-child(2) .programIcon { animation-delay:-1.1s; }
 .programCard:nth-child(3) .programIcon { animation-delay:-2.2s; }
 .programCard:nth-child(4) .programIcon { animation-delay:-3.3s; }
 @keyframes programFloat { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-10px) rotate(5deg)} }
+@keyframes programPop { 0%{transform:translateY(0) scale(1) rotate(0)} 45%{transform:translateY(-13px) scale(1.28) rotate(10deg)} 72%{transform:translateY(-8px) scale(1.14) rotate(-3deg)} 100%{transform:translateY(-9px) scale(1.18) rotate(2deg)} }
 .worksCarouselWrap { position:relative; }
 .worksCarouselWrap:focus-within .worksTrack { animation-play-state:paused; }
 .worksArrow { position:absolute; z-index:4; top:38%; width:48px; height:48px; display:grid; place-items:center; border:1px solid rgba(27,24,45,.14); border-radius:50%; background:rgba(255,255,255,.9); color:var(--ink); font-size:22px; cursor:pointer; backdrop-filter:blur(5px); transition:background .2s ease,color .2s ease,transform .2s ease; }
@@ -157,4 +161,4 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .programs .sectionHeader.isVisible h2 span { display:inline-block; animation:heroRise .75s .12s cubic-bezier(.22,.7,.25,1) both; }
 .programs .sectionHeader.isVisible h2 em { display:inline-block; animation:heroRise .75s .27s cubic-bezier(.22,.7,.25,1) both; }
 .programs .sectionHeader.isVisible .sectionIntro { animation:heroRise .7s .42s ease-out both; }
-@media (prefers-reduced-motion:reduce) { .programs .sectionHeader>p:first-child,.programs .sectionHeader h2 span,.programs .sectionHeader h2 em,.programs .sectionHeader .sectionIntro{opacity:1;transform:none;animation:none} }
+@media (prefers-reduced-motion:reduce) { .programs .sectionHeader>p:first-child,.programs .sectionHeader h2 span,.programs .sectionHeader h2 em,.programs .sectionHeader .sectionIntro{opacity:1;transform:none;animation:none}.programCard:hover .programIcon{animation:none;transform:scale(1.1)} }
