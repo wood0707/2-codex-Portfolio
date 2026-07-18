@@ -111,13 +111,13 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroKeywords span { margin:0 9px; color:var(--coral); font-weight:500; }
 .heroKeywords i { display:inline-block; width:8px; height:8px; margin:0 12px 1px 1px; background:var(--coral); transform:rotate(45deg); }
 @media (max-width:560px) { .heroKeywords{margin-top:24px;font-size:12px;line-height:2}.heroKeywords span{margin:0 5px} }
-.hero { padding-bottom:70px; }
+.hero { padding-bottom:0; }
 .heroRole { margin:16px 0 0; color:var(--ink); font-family:"Noto Sans KR","Malgun Gothic",sans-serif; font-size:17px; font-weight:700; letter-spacing:-.02em; animation:heroRise .72s .08s ease-out both; }
 .heroRole span { margin:0 7px; color:var(--coral); }
 .heroText p { margin:0; }
 .heroText p+p { margin-top:8px; }
 .heroText strong { color:#3f4251; font-weight:700; }
-@media (max-width:560px) { .hero{padding-bottom:52px}.heroRole{font-size:14px}.heroText p+p{margin-top:7px} }
+@media (max-width:560px) { .hero{padding-bottom:0}.heroRole{font-size:14px}.heroText p+p{margin-top:7px} }
 .heroRole { margin:78px 0 17px; font-size:23px; }
 .heroRole,.heroText,.heroKeywords { padding-left:12px; }
 .heroText { max-width:680px; font-size:18px; font-weight:700; }
