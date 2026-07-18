@@ -93,11 +93,6 @@ export default function Home() {
             <a className="textBtn" href="#programs">프로그램 보기 <span>→</span></a>
           </div>
         </div>
-        <div className="heroBottom">
-          <div className="heroIdentity"><small>AI CONTENT EDUCATOR</small><strong><b>오영주</b><span>AI 전문 강사</span></strong></div>
-          <p>생성형 AI를 활용한<br />자립적 콘텐츠 제작 교육</p>
-          <div className="miniTags"><span>콘텐츠 기획</span><span>업무 자동화</span><span>AI 영상</span><span>퍼스널 브랜딩</span></div>
-        </div>
       </section>
 
       <section className="section skillsSection" id="skills">
