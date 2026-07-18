@@ -195,9 +195,8 @@ export default function Home() {
         <header className="sectionHeader compact"><p>— Section 07 · Reviews</p><h2>수강 <em>후기</em></h2><p className="sectionIntro">교육 현장에서 직접 경험한 수강생들의 이야기를 전합니다.</p></header>
         <div className="reviewList" tabIndex={0} aria-label="수강 후기 목록, 위아래로 스크롤할 수 있습니다">
           {reviews.map(([quote, name, course, icon]) => <article className="reviewCard" key={name}>
-            <p className="reviewStars" aria-label="별점 5점">★★★★★</p>
             <blockquote>“{quote}”</blockquote>
-            <div className="reviewAuthor"><span aria-hidden="true">{icon}</span><p><strong>{name}</strong><small>{course}</small></p></div>
+            <div className="reviewAuthor"><span aria-hidden="true">{icon}</span><p><span className="reviewNameRow"><strong>{name}</strong><span className="reviewStars" aria-label="별점 5점">★★★★★</span></span><small>{course}</small></p></div>
           </article>)}
         </div>
       </section>
