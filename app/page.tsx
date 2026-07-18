@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 const skills = [
   "생성형 AI 콘텐츠 제작 교육",
@@ -43,14 +43,21 @@ const studentWorks = [
   ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `작품 ${String(index + 1).padStart(2, "0")}` })),
 ];
 
+const reviews = [
+  ["ChatGPT와 Vrew를 처음 배웠는데 이렇게 쉬울 줄 몰랐어요. 4주 후엔 완성도 높은 영상을 혼자 만들 수 있게 됐습니다.", "이○○님", "프리랜서 · 기초 과정 수강", "☺"],
+  ["기술만 배우는 게 아니라 실제 업무에 바로 쓸 수 있는 워크플로우를 배울 수 있어서 좋았습니다. 추천합니다!", "박○○님", "스타트업 · 실무 과정 수강", "◆"],
+  ["AI가 유행이긴 한데 실제로 어떻게 업무에 적용하는지 막막했어요. 오영주 강사님의 교육으로 완전히 이해하게 됐습니다.", "최○○님", "기업 · 고급 과정 수강", "✦"],
+];
+
 export default function Home() {
   const [sent, setSent] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [inquiryOpen, setInquiryOpen] = useState(false);
   const [heartBurst, setHeartBurst] = useState(0);
+  const worksCarouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .sectionHeader:not(.staticHeader), .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .workGrid article, .finalCtaInner");
+    const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .sectionHeader:not(.staticHeader), .programs .sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .reviewCard, .finalCtaInner");
     items.forEach((item, index) => {
       item.classList.add("revealItem");
       item.style.setProperty("--reveal-delay", `${(index % 4) * 80}ms`);
@@ -102,7 +109,7 @@ export default function Home() {
           <div className="heroText">
             <p>생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 효율화, 바이브코딩까지 폭넓은 실무 교육을 진행합니다.</p>
           </div>
-          <p className="heroKeywords">콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</p>
+          <p className="heroKeywords"><i aria-hidden="true" />콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</p>
         </div>
       </section>
 
@@ -167,13 +174,28 @@ export default function Home() {
 
       <section className="section works" id="works">
         <header className="sectionHeader compact"><p>— Section 06 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
-        <div className="worksCarousel" aria-label="수강생 작품 자동 갤러리">
-          <div className="worksTrack">
-            {[...studentWorks, ...studentWorks].map((work, index) => <article className="workCard" key={`${work.src}-${index}`} aria-hidden={index >= studentWorks.length}>
-              <div className="workImage"><img src={work.src} alt={index < studentWorks.length ? work.title : ""} loading="lazy" /></div>
-              <p>{work.category}</p><h3>{work.title}</h3>
-            </article>)}
+        <div className="worksCarouselWrap">
+          <button className="worksArrow worksArrowPrev" type="button" aria-label="이전 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: -390, behavior: "smooth" })}>←</button>
+          <div className="worksCarousel" ref={worksCarouselRef} aria-label="수강생 작품 자동 갤러리">
+            <div className="worksTrack">
+              {[...studentWorks, ...studentWorks].map((work, index) => <article className="workCard" key={`${work.src}-${index}`} aria-hidden={index >= studentWorks.length}>
+                <div className="workImage"><img src={work.src} alt={index < studentWorks.length ? work.title : ""} loading="lazy" /></div>
+                <p>{work.category}</p><h3>{work.title}</h3>
+              </article>)}
+            </div>
           </div>
+          <button className="worksArrow worksArrowNext" type="button" aria-label="다음 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: 390, behavior: "smooth" })}>→</button>
+        </div>
+      </section>
+
+      <section className="section reviewsSection" id="reviews">
+        <header className="sectionHeader compact"><p>— Section 07 · Reviews</p><h2>수강 <em>후기</em></h2><p className="sectionIntro">교육 현장에서 직접 경험한 수강생들의 이야기를 전합니다.</p></header>
+        <div className="reviewList">
+          {reviews.map(([quote, name, course, icon]) => <article className="reviewCard" key={name}>
+            <p className="reviewStars" aria-label="별점 5점">★★★★★</p>
+            <blockquote>“{quote}”</blockquote>
+            <div className="reviewAuthor"><span aria-hidden="true">{icon}</span><p><strong>{name}</strong><small>{course}</small></p></div>
+          </article>)}
         </div>
       </section>
 
