@@ -102,7 +102,7 @@ export default function Home() {
           {heartBurst > 0 && <span className="heartBurst" key={heartBurst} aria-hidden="true">{Array.from({ length: 10 }, (_, index) => <i key={index}>♥</i>)}</span>}
         </button>
         <div className="heroCopy" id="about">
-          <p className="eyebrow">GENERATIVE AI EDUCATOR · AI WORKFLOW ARCHITECT</p>
+          <p className="eyebrow">AI 콘텐츠 교육 &amp; 워크플로우 아키텍트</p>
           <h1>
             <span className="coral">생각을 콘텐츠로,</span>
             <span className="heroMiddle">콘텐츠를 성과로 만드는</span>
