@@ -106,3 +106,6 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 @media (prefers-reduced-motion:reduce) { .worksTrack{animation:none;overflow-x:auto}.workImage img{transition:none} }
 .workImage img { object-fit:contain; object-position:center center; }
 .workImage img[src$="brand-03.png"] { width:84%; height:84%; margin:8% auto; }
+.heroKeywords { margin:28px 0 0; color:#3f4251; font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:14px; font-weight:700; line-height:1.8; word-break:keep-all; animation:heroRise .75s .68s ease-out both; }
+.heroKeywords span { margin:0 9px; color:var(--coral); font-weight:500; }
+@media (max-width:560px) { .heroKeywords{margin-top:24px;font-size:12px;line-height:2}.heroKeywords span{margin:0 5px} }
