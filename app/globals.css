@@ -109,3 +109,10 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroKeywords { margin:28px 0 0; color:#3f4251; font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:14px; font-weight:700; line-height:1.8; word-break:keep-all; animation:heroRise .75s .68s ease-out both; }
 .heroKeywords span { margin:0 9px; color:var(--coral); font-weight:500; }
 @media (max-width:560px) { .heroKeywords{margin-top:24px;font-size:12px;line-height:2}.heroKeywords span{margin:0 5px} }
+.hero { padding-bottom:70px; }
+.heroRole { margin:16px 0 0; color:var(--ink); font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:17px; font-weight:700; letter-spacing:-.02em; animation:heroRise .72s .08s ease-out both; }
+.heroRole span { margin:0 7px; color:var(--coral); }
+.heroText p { margin:0; }
+.heroText p+p { margin-top:8px; }
+.heroText strong { color:#3f4251; font-weight:700; }
+@media (max-width:560px) { .hero{padding-bottom:52px}.heroRole{font-size:14px}.heroText p+p{margin-top:7px} }

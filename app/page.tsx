@@ -91,21 +91,19 @@ export default function Home() {
         <button className="heroHeartAction" type="button" aria-label="하트 효과 보기" title="하트를 눌러보세요" onClick={() => setHeartBurst((value) => value + 1)}>
           {heartBurst > 0 && <span className="heartBurst" key={heartBurst} aria-hidden="true">{Array.from({ length: 10 }, (_, index) => <i key={index}>♥</i>)}</span>}
         </button>
-        <div className="heroCopy">
-          <p className="eyebrow">GENERATIVE AI EDUCATOR · CONTENT DIRECTOR</p>
+        <div className="heroCopy" id="about">
+          <p className="eyebrow">ABOUT THE EDUCATOR</p>
+          <p className="heroRole">오영주 <span>·</span> AI 콘텐츠 전문 강사</p>
           <h1>
             <span className="coral">생각을 콘텐츠로,</span>
             <span className="heroMiddle">콘텐츠를 성과로 만드는</span>
             <span className="lavender">생성형 AI 교육 전문가</span>
           </h1>
-          <p className="heroText">생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 자동화와 바이브코딩까지. 기술을 나열하는 교육이 아닌, 현장에서 바로 활용하는 경험을 설계합니다.</p>
-          <p className="heroKeywords">콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</p>
-        </div>
-        <div className="heroBottom heroBottomSimple">
-          <div className="heroAboutTitle"><small>ABOUT THE EDUCATOR</small><strong>강사 <em>소개</em></strong></div>
-          <div className="heroAboutCopy">
+          <div className="heroText">
+            <p>생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 효율화와 바이브코딩까지.</p>
             <p><strong>생성형 AI 활용과 AI 리터러시 교육을 기반으로, 업무 효율화와 콘텐츠 제작을 연결하는 실무형 교육을 설계하고 있습니다.</strong></p>
           </div>
+          <p className="heroKeywords">콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</p>
         </div>
       </section>
 
