@@ -43,6 +43,11 @@ const studentWorks = [
   ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `${index < 4 ? "숏폼 씬 구성" : "작품"} ${String(index + 1).padStart(2, "0")}` })),
 ];
 
+const videoWorks = Array.from({ length: 6 }, (_, index) => ({
+  src: `/student-videos/video-${String(index + 1).padStart(2, "0")}.mp4`,
+  title: `AI 영상 작품 ${String(index + 1).padStart(2, "0")}`,
+}));
+
 const reviews = [
   ["ChatGPT와 Vrew를 처음 배웠는데 이렇게 쉬울 줄 몰랐어요. 4주 후엔 완성도 높은 영상을 혼자 만들 수 있게 됐습니다.", "이○○님", "프리랜서 · 기초 과정 수강", "☺"],
   ["기술만 배우는 게 아니라 실제 업무에 바로 쓸 수 있는 워크플로우를 배울 수 있어서 좋았습니다. 추천합니다!", "박○○님", "스타트업 · 실무 과정 수강", "◆"],
@@ -210,6 +215,15 @@ export default function Home() {
             </div>
           </div>
           <button className="worksArrow worksArrowNext" type="button" aria-label="다음 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: 390, behavior: "smooth" })}>〉</button>
+        </div>
+        <div className="videoWorks">
+          <h3>AI 영상 작품</h3>
+          <div className="videoWorksTrack">
+            {videoWorks.map((work) => <article className="videoWorkCard" key={work.src}>
+              <video src={work.src} controls preload="metadata" playsInline aria-label={work.title} />
+              <p>AI VIDEO</p><h4>{work.title}</h4>
+            </article>)}
+          </div>
         </div>
       </section>
 
