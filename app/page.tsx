@@ -11,22 +11,24 @@ const skills = [
   "바이브코딩 · 웹페이지, 랜딩페이지 제작",
 ];
 
-const aiEducationExperiences = [
+const keyRoles = [
   "함온 AI 협동 조합 이사",
   "한국 AI 리터러시 강사 협회 이사",
   "디지털융합교육원 지도교수",
-  "희망리턴패키지 재기사업화 채움멘토",
-  "(주)지아이에듀테크",
-  "NCS 확인강사",
-  "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
+  "SIAFF AI 영화제 심사위원",
+  "고양영상미디어 지역 커뮤니티 [APS] 대표",
 ];
 
-const designContentExperiences = [
+const practicalTeachingExperiences = [
   "MBC아카데미컴퓨터학원",
   "(재)서울현대교육재단",
+  "희망리턴패키지 재기사업화 채움멘토",
+  "(주)지아이에듀테크",
   "(주)카버코리아 디자인팀",
-  "(주)삼덕공사 디자인팀(의전행사)",
-  "그린컴퓨터아트학원(3d max)",
+  "(주)삼덕공사 디자인팀 · 의전행사",
+  "NCS 확인강사",
+  "그린컴퓨터아트학원 · 3D MAX",
+  "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
 ];
 
 const programs = [
@@ -40,6 +42,7 @@ export default function Home() {
   const [sent, setSent] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [inquiryOpen, setInquiryOpen] = useState(false);
+  const [heartBurst, setHeartBurst] = useState(0);
 
   useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>(".sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .finalCtaInner");
@@ -80,15 +83,18 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroArt" aria-hidden="true" />
+        <button className="heroHeartAction" type="button" aria-label="하트 효과 보기" title="하트를 눌러보세요" onClick={() => setHeartBurst((value) => value + 1)}>
+          {heartBurst > 0 && <span className="heartBurst" key={heartBurst} aria-hidden="true">{Array.from({ length: 10 }, (_, index) => <i key={index}>♥</i>)}</span>}
+        </button>
         <div className="heroCopy">
           <p className="eyebrow">GENERATIVE AI EDUCATOR · CONTENT DIRECTOR</p>
-          <p className="heroName"><b>오 영 주</b><span>생성형 AI 활용 전문 강사</span></p>
           <h1>
             <span className="coral">생각을 콘텐츠로,</span>
             <span className="heroMiddle">콘텐츠를 성과로 만드는</span>
             <span className="lavender">생성형 AI 교육 전문가</span>
           </h1>
           <p className="heroText">생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 자동화와 바이브코딩까지. 기술을 나열하는 교육이 아닌, 현장에서 바로 활용하는 경험을 설계합니다.</p>
+          <p className="heroName"><b>오 영 주</b><span>생성형 AI 활용 전문 강사</span></p>
           <div className="heroActions">
             <button className="primaryBtn" type="button" onClick={() => setInquiryOpen(true)}>강의 문의하기</button>
             <a className="textBtn" href="#programs">프로그램 보기 <span>→</span></a>
@@ -114,10 +120,10 @@ export default function Home() {
           <h2>주요 <em>경력</em></h2>
         </header>
         <div className="experienceWrap">
-          <p className="bigStatement">교육, 디자인, 생성형 AI를 연결해 현장 중심의 배움을 설계합니다.</p>
+          <p className="sectionIntro experienceIntro">교육, 디자인, 생성형 AI를 연결해 현장 중심의 배움을 설계합니다.</p>
           <div className="experienceColumns">
-            <article className="experienceGroup"><h3><span>01</span> AI·디지털 교육 경력</h3><ol className="experienceList">{aiEducationExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
-            <article className="experienceGroup"><h3><span>02</span> 디자인·콘텐츠 실무 경력</h3><ol className="experienceList">{designContentExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
+            <article className="experienceGroup"><h3><span>01</span> 주요 활동 및 직책 <small>Key Roles &amp; Activities</small></h3><ol className="experienceList">{keyRoles.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
+            <article className="experienceGroup"><h3><span>02</span> 실무 및 강의 경력</h3><ol className="experienceList">{practicalTeachingExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
           </div>
         </div>
       </section>
