@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 const skills = [
   "생성형 AI 콘텐츠 제작 교육",
@@ -41,6 +41,24 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [inquiryOpen, setInquiryOpen] = useState(false);
 
+  useEffect(() => {
+    const items = document.querySelectorAll<HTMLElement>(".sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .finalCtaInner");
+    items.forEach((item, index) => {
+      item.classList.add("revealItem");
+      item.style.setProperty("--reveal-delay", `${(index % 4) * 80}ms`);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("isVisible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px" });
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   function submitInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSent(true);
@@ -76,7 +94,7 @@ export default function Home() {
           </div>
         </div>
         <div className="heroBottom">
-          <div><small>AI CONTENT EDUCATOR</small><strong>오영주</strong></div>
+          <div><small>AI CONTENT EDUCATOR</small><strong>오영주 AI 전문 강사</strong></div>
           <p>생성형 AI를 활용한<br />자립적 콘텐츠 제작 교육</p>
           <div className="miniTags"><span>콘텐츠 기획</span><span>업무 자동화</span><span>AI 영상</span><span>퍼스널 브랜딩</span></div>
         </div>
@@ -116,11 +134,11 @@ export default function Home() {
         </header>
         <div className="credentials">
           <div className="credentialBlock">
-          <p>AWARDS & ACTIVITIES</p><h2>수상 및 활동</h2>
+          <p>AWARDS &amp; ACTIVITIES</p>
           <ul><li>인공지능 콘텐츠 강사 경진대회 &apos;대상&apos;</li><li>대한민국 AI 영상제 &apos;최우수상&apos;</li><li>SIAFF AI 영화제 제3회 심사위원</li><li>고양영상미디어 지역 커뮤니티 [APS] 대표</li></ul>
           </div>
           <div className="credentialBlock lavenderBlock">
-          <p>CERTIFICATIONS</p><h2>자격증</h2>
+          <p>CERTIFICATIONS</p>
           <ul><li>생성형 AI 교육지도사<br />AI 리터러시 강사</li><li>KPC 그래픽기술자격 그래픽마스터</li><li>컴퓨터그래픽스운용기능사</li></ul>
           </div>
         </div>
