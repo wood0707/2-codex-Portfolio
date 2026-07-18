@@ -181,7 +181,7 @@ export default function Home() {
         <span className="ctaOrb ctaOrbLeft" aria-hidden="true" />
         <span className="ctaOrb ctaOrbRight" aria-hidden="true" />
         <div className="finalCtaInner">
-          <h2><span>기술의 나열이 아닌</span><span><em>실무 워크플로우</em>를</span><span>지금 시작하세요</span></h2>
+          <h2><span>기술의 나열이 아닌 <em>실무 워크플로우</em>를</span><span>지금 시작하세요.</span></h2>
           <p>학교 · 기업 · 개인 모두 맞춤 커리큘럼으로 진행합니다</p>
           <div className="finalCtaActions">
             <button type="button" onClick={() => setInquiryOpen(true)}>강의 문의</button>
