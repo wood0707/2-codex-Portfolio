@@ -11,19 +11,22 @@ const skills = [
   "바이브코딩 · 웹페이지, 랜딩페이지 제작",
 ];
 
-const experiences = [
+const aiEducationExperiences = [
   "함온 AI 협동 조합 이사",
   "한국 AI 리터러시 강사 협회 이사",
   "디지털융합교육원 지도교수",
-  "MBC아카데미컴퓨터학원",
-  "(재)서울현대교육재단",
   "희망리턴패키지 재기사업화 채움멘토",
   "(주)지아이에듀테크",
+  "NCS 확인강사",
+  "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
+];
+
+const designContentExperiences = [
+  "MBC아카데미컴퓨터학원",
+  "(재)서울현대교육재단",
   "(주)카버코리아 디자인팀",
   "(주)삼덕공사 디자인팀(의전행사)",
-  "NCS 확인강사",
   "그린컴퓨터아트학원(3d max)",
-  "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
 ];
 
 const programs = [
@@ -98,16 +101,17 @@ export default function Home() {
         </header>
         <div className="experienceWrap">
           <p className="bigStatement">교육, 디자인, 생성형 AI를 연결해<br />현장 중심의 배움을 설계합니다.</p>
-          <ol className="experienceList">
-            {experiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}
-          </ol>
+          <div className="experienceColumns">
+            <article className="experienceGroup"><h3><span>01</span> AI·디지털 교육 경력</h3><ol className="experienceList">{aiEducationExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
+            <article className="experienceGroup"><h3><span>02</span> 디자인·콘텐츠 실무 경력</h3><ol className="experienceList">{designContentExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
+          </div>
         </div>
       </section>
 
       <section className="section credentialsSection" id="credentials">
         <header className="sectionHeader compact">
           <p>— Section 03 · Credentials</p>
-          <h2>수상 및 <em>자격</em></h2>
+          <h2>수상 및 <em>자격증</em></h2>
           <p className="sectionIntro">교육 전문성과 콘텐츠 제작 역량을 증명하는 주요 활동과 기록입니다.</p>
         </header>
         <div className="credentials">
@@ -116,8 +120,8 @@ export default function Home() {
           <ul><li>인공지능 콘텐츠 강사 경진대회 &apos;대상&apos;</li><li>대한민국 AI 영상제 &apos;최우수상&apos;</li><li>SIAFF AI 영화제 제3회 심사위원</li><li>고양영상미디어 지역 커뮤니티 [APS] 대표</li></ul>
           </div>
           <div className="credentialBlock lavenderBlock">
-          <p>CERTIFICATIONS</p><h2>자격</h2>
-          <ul><li>생성형 AI 교육지도사 / AI 리터러시 강사</li><li>KPC 그래픽기술자격 그래픽마스터</li><li>컴퓨터그래픽스운용기능사</li></ul>
+          <p>CERTIFICATIONS</p><h2>자격증</h2>
+          <ul><li>생성형 AI 교육지도사<br />AI 리터러시 강사</li><li>KPC 그래픽기술자격 그래픽마스터</li><li>컴퓨터그래픽스운용기능사</li></ul>
           </div>
         </div>
       </section>
