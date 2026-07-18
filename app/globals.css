@@ -112,7 +112,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroKeywords i { display:inline-block; width:8px; height:8px; margin:0 12px 1px 1px; background:var(--coral); transform:rotate(45deg); }
 @media (max-width:560px) { .heroKeywords{margin-top:24px;font-size:12px;line-height:2}.heroKeywords span{margin:0 5px} }
 .hero { padding-bottom:0; }
-.heroRole { margin:16px 0 0; color:var(--ink); font-family:"Noto Sans KR","Malgun Gothic",sans-serif; font-size:17px; font-weight:700; letter-spacing:-.02em; animation:heroRise .72s .08s ease-out both; }
+.heroRole { margin:16px 0 0; color:var(--ink); font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:17px; font-weight:700; letter-spacing:-.02em; animation:heroRise .72s .08s ease-out both; }
 .heroRole span { margin:0 7px; color:var(--coral); }
 .heroText p { margin:0; }
 .heroText p+p { margin-top:8px; }
@@ -120,7 +120,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 @media (max-width:560px) { .hero{padding-bottom:0}.heroRole{font-size:14px}.heroText p+p{margin-top:7px} }
 .heroRole { margin:78px 0 17px; font-size:23px; }
 .heroRole,.heroText,.heroKeywords { padding-left:12px; }
-.heroText { max-width:680px; font-size:18px; font-weight:700; }
+.heroText { max-width:680px; font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:18px; font-weight:700; }
 .heroKeywords { margin-top:16px; font-size:18px; font-weight:500; }
 @media (max-width:560px) { .heroCopy .eyebrow{font-size:11px}.heroRole{margin:48px 0 13px;font-size:18px}.heroText{font-size:15px}.heroKeywords{margin-top:14px;font-size:15px} }
 .heroProfileBar { position:absolute; z-index:2; left:0; right:0; bottom:0; display:grid; grid-template-columns:minmax(260px,.8fr) minmax(420px,1.5fr) minmax(420px,1.35fr); align-items:center; gap:34px; margin:0; padding:26px 4.3vw 28px; border-top:1px solid rgba(221,216,210,.55); background:rgba(255,255,255,.52); backdrop-filter:blur(8px); }
@@ -173,3 +173,4 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .contactForm button:disabled { cursor:wait; opacity:.65; }
 .formError { color:#b74d4b; }
 .credentialBlock:nth-child(2) ul { font-size:19px; }
+.sectionHeader h2,.skillsHeader h2,.aboutHeader h2 { font-weight:300; }
