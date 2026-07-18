@@ -15,14 +15,14 @@ const keyRoles = [
   "함온 AI 협동 조합 이사",
   "한국 AI 리터러시 강사 협회 이사",
   "디지털융합교육원 지도교수",
-  "SIAFF AI 영화제 심사위원",
+  "SIAFF 제3회 AI 영화제 심사위원",
   "고양영상미디어 지역 커뮤니티 [APS] 대표",
 ];
 
 const practicalTeachingExperiences = [
   "MBC아카데미컴퓨터학원",
   "(재)서울현대교육재단",
-  "희망리턴패키지 재기사업화 채움멘토",
+  "2025, 2026 희망리턴패키지 재기사업화 채움멘토",
   "(주)지아이에듀테크",
   "(주)카버코리아 디자인팀",
   "(주)삼덕공사 디자인팀 · 의전행사",
@@ -45,7 +45,7 @@ export default function Home() {
   const [heartBurst, setHeartBurst] = useState(0);
 
   useEffect(() => {
-    const items = document.querySelectorAll<HTMLElement>(".sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .finalCtaInner");
+    const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .aboutRoles li, .sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .finalCtaInner");
     items.forEach((item, index) => {
       item.classList.add("revealItem");
       item.style.setProperty("--reveal-delay", `${(index % 4) * 80}ms`);
@@ -75,7 +75,7 @@ export default function Home() {
           <span /><span /><span />
         </button>
         <div className={`navLinks ${menuOpen ? "open" : ""}`}>
-          <a href="#top" onClick={() => setMenuOpen(false)}>소개</a><a href="#skills" onClick={() => setMenuOpen(false)}>강의</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>소개</a><a href="#skills" onClick={() => setMenuOpen(false)}>강의</a>
           <a href="#programs" onClick={() => setMenuOpen(false)}>커리큘럼</a><a href="#works" onClick={() => setMenuOpen(false)}>포트폴리오</a>
           <button className="navCta navInquiry" type="button" onClick={() => { setMenuOpen(false); setInquiryOpen(true); }}>문의하기</button>
         </div>
@@ -102,6 +102,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="instructorIntro" id="about">
+        <header className="aboutHeader">
+          <p>ABOUT THE EDUCATOR</p>
+          <h2>강사 소개</h2>
+          <span>현장에서 바로 적용 가능한 생성형 AI 활용 교육을 설계합니다.</span>
+        </header>
+        <div className="aboutLayout">
+          <div className="aboutText">
+            <p>디자인 실무와 교육 현장에서 쌓은 경험을 바탕으로 생성형 AI를 콘텐츠 기획, 영상 제작, 업무 자동화와 바이브코딩까지 연결합니다.</p>
+            <p><strong>학습자가 도구 사용법에 머무르지 않고 자신의 아이디어를 실제 결과물로 완성하도록 돕는 것</strong>을 교육의 중심에 두고, 학교·기업·개인의 목표에 맞는 실용적인 커리큘럼을 설계합니다.</p>
+          </div>
+          <ul className="aboutRoles">
+            <li>함온 AI 협동조합 이사</li>
+            <li>한국 AI 리터러시 강사 협회 이사</li>
+            <li>디지털융합교육원 지도교수</li>
+            <li>생성형 AI 콘텐츠 교육 전문가</li>
+            <li>AI 영상·브랜딩·업무 자동화 강사</li>
+          </ul>
+        </div>
+      </section>
+
       <section className="section skillsSection" id="skills">
         <header className="sectionHeader compact skillsHeader">
           <p>— Section 01 Core Competencies</p>
@@ -122,7 +143,7 @@ export default function Home() {
         <div className="experienceWrap">
           <p className="sectionIntro experienceIntro">교육, 디자인, 생성형 AI를 연결해 현장 중심의 배움을 설계합니다.</p>
           <div className="experienceColumns">
-            <article className="experienceGroup"><h3><span>01</span> 주요 활동 및 직책 <small>Key Roles &amp; Activities</small></h3><ol className="experienceList">{keyRoles.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
+            <article className="experienceGroup"><h3><span>01</span> 주요 활동 및 직책</h3><ol className="experienceList">{keyRoles.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
             <article className="experienceGroup"><h3><span>02</span> 실무 및 강의 경력</h3><ol className="experienceList">{practicalTeachingExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
           </div>
         </div>
@@ -137,7 +158,7 @@ export default function Home() {
         <div className="credentials">
           <div className="credentialBlock">
           <p>AWARDS &amp; ACTIVITIES</p>
-          <ul><li>인공지능 콘텐츠 강사 경진대회 &apos;대상&apos;</li><li>대한민국 AI 영상제 &apos;최우수상&apos;</li><li>SIAFF AI 영화제 제3회 심사위원</li><li>고양영상미디어 지역 커뮤니티 [APS] 대표</li></ul>
+          <ul><li>인공지능 콘텐츠 강사 경진대회 &apos;대상&apos;</li><li>대한민국 AI 영상제 &apos;최우수상&apos;</li><li>SIAFF 제3회 AI 영화제 심사위원</li><li>고양영상미디어 지역 커뮤니티 [APS] 대표</li></ul>
           </div>
           <div className="credentialBlock lavenderBlock">
           <p>CERTIFICATIONS</p>
