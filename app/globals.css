@@ -174,3 +174,4 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .formError { color:#b74d4b; }
 .credentialBlock:nth-child(2) ul { font-size:19px; }
 .sectionHeader h2,.skillsHeader h2,.aboutHeader h2 { font-weight:300; }
+.skillsHeader h2 { font-weight:500; }
