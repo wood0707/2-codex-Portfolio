@@ -170,3 +170,5 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .programs .sectionHeader.isVisible h2 em { display:inline-block; animation:heroRise .75s .27s cubic-bezier(.22,.7,.25,1) both; }
 .programs .sectionHeader.isVisible .sectionIntro { animation:heroRise .7s .42s ease-out both; }
 @media (prefers-reduced-motion:reduce) { .programs .sectionHeader>p:first-child,.programs .sectionHeader h2 span,.programs .sectionHeader h2 em,.programs .sectionHeader .sectionIntro{opacity:1;transform:none;animation:none}.programCard:hover .programIcon{animation:none;transform:scale(1.1)} }
+.contactForm button:disabled { cursor:wait; opacity:.65; }
+.formError { color:#b74d4b; }

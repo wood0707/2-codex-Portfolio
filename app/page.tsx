@@ -54,6 +54,8 @@ const reviews = [
 
 export default function Home() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [inquiryOpen, setInquiryOpen] = useState(false);
   const [heartBurst, setHeartBurst] = useState(0);
@@ -77,9 +79,29 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  function submitInquiry(event: FormEvent<HTMLFormElement>) {
+  async function submitInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSent(true);
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    setSubmitting(true);
+    setSent(false);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/inquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(data.entries())),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "문의 접수에 실패했습니다.");
+      form.reset();
+      setSent(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "문의 접수에 실패했습니다.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -240,8 +262,9 @@ export default function Home() {
             </select>
           </label>
           <label>문의 내용<textarea name="message" required rows={5} placeholder="교육 목적, 인원, 희망 일정 등을 자유롭게 적어주세요" /></label>
-          <button type="submit">문의 보내기 <span>→</span></button>
+          <button type="submit" disabled={submitting}>{submitting ? "전송 중..." : "문의 보내기"} {!submitting && <span>→</span>}</button>
           {sent && <p className="formMessage" role="status">문의가 접수되었습니다. 확인 후 연락드리겠습니다.</p>}
+          {submitError && <p className="formMessage formError" role="alert">{submitError}</p>}
           </form>
         </section>
       </div>}
