@@ -105,7 +105,8 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 @media (max-width:560px) { .worksCarousel{margin:0 -22px}.worksTrack{gap:14px;animation-duration:58s}.workCard{width:76vw}.workCard:first-child{margin-left:14px}.workCard>h3{font-size:16px}@keyframes worksMarquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}} }
 @media (prefers-reduced-motion:reduce) { .worksTrack{animation:none;overflow-x:auto}.workImage img{transition:none} }
 .workImage img { object-fit:cover; object-position:center center; }
-.workImage img[src$="brand-03.png"] { object-fit:contain; width:88%; height:88%; margin:6% auto; }
+.workImage img[src$="brand-03.png"] { object-fit:cover; width:100%; height:100%; margin:0; }
+.workImage img[src$="brand-04.png"] { object-position:center 64%; }
 .heroKeywords { margin:28px 0 0; color:#3f4251; font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:14px; font-weight:700; line-height:1.8; word-break:keep-all; animation:heroRise .75s .68s ease-out both; }
 .heroKeywords span { margin:0 9px; color:var(--coral); font-weight:500; }
 @media (max-width:560px) { .heroKeywords{margin-top:24px;font-size:12px;line-height:2}.heroKeywords span{margin:0 5px} }
