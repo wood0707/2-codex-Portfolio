@@ -20,11 +20,11 @@ const keyRoles = [
 ];
 
 const practicalTeachingExperiences = [
-  "MBC아카데미컴퓨터학원 · AI 활용, 그래픽 디자인",
+  "MBC아카데미컴퓨터학원 · 훈련교사",
   "(재)서울현대교육재단 · IT 직무 교육",
   "2025, 2026 희망리턴패키지 재기사업화 채움멘토",
   "NCS 확인강사",
-  "(주)지아이에듀테크",
+  "(주)지아이에듀테크 · 전임강사",
   "(주)카버코리아 디자인팀",
   "(주)삼덕공사 디자인팀 · 의전행사",
   "그린컴퓨터아트학원 · 3D MAX",
@@ -140,7 +140,7 @@ export default function Home() {
 
       <section className="section skillsSection" id="skills">
         <header className="sectionHeader compact skillsHeader">
-          <p>— Section 01 Core Competencies</p>
+          <p>Section 01 Core Competencies</p>
           <h2>핵심 역량 및 <em>교육 분야</em></h2>
         </header>
         <div className="skillGrid">
@@ -152,7 +152,7 @@ export default function Home() {
 
       <section className="section experienceSection" id="experience">
         <header className="sectionHeader compact">
-          <p>— Section 02 · Experience</p>
+          <p>Section 02 · Experience</p>
           <h2>주요 <em>경력</em></h2>
         </header>
         <div className="experienceWrap">
@@ -166,7 +166,7 @@ export default function Home() {
 
       <section className="section credentialsSection" id="credentials">
         <header className="sectionHeader compact">
-          <p>— Section 03 · Credentials</p>
+          <p>Section 03 · Credentials</p>
           <h2>수상 및 <em>자격증</em></h2>
           <p className="sectionIntro">교육 전문성과 콘텐츠 제작 역량을 증명하는 주요 활동과 기록입니다.</p>
         </header>
@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
       <section className="section booksSection" id="books">
-        <header className="sectionHeader compact"><p>— Section 04 · Books</p><h2>출간 <em>저서</em></h2><p className="sectionIntro">생성형 AI 활용 경험과 실무 노하우를 책으로 전합니다.</p></header>
+        <header className="sectionHeader compact"><p>Section 04 · Books</p><h2>출간 <em>저서</em></h2><p className="sectionIntro">생성형 AI 활용 경험과 실무 노하우를 책으로 전합니다.</p></header>
         <div className="bookGrid">
           <article><div className="bookCover"><img src="/books/ai-automation.jpg" alt="한 권으로 끝내는 AI 자동화 책 표지" /></div><div className="bookInfo"><span>BOOK 01</span><h3>『한 권으로 끝내는 AI 자동화』</h3><p>공저 · 주간 베스트셀러 선정</p></div></article>
           <article><div className="bookCover"><img src="/books/ai-advertising.png" alt="AI 광고 제작의 모든 것 전자책 표지" /></div><div className="bookInfo"><span>BOOK 02</span><h3>『AI 광고 제작의 모든 것』</h3><p>전자책 공저</p></div></article>
@@ -191,14 +191,14 @@ export default function Home() {
       </section>
 
       <section className="section programs" id="programs">
-        <header className="sectionHeader compact staticHeader"><p>— Section 05 · Programs</p><h2><span>핵심 프로그램</span> <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
+        <header className="sectionHeader compact staticHeader"><p>Section 05 · Programs</p><h2><span>핵심 프로그램</span> <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
         <div className="programGrid">
           {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{["✦", "◌", "↗", "◎"][index]}</div><h3>{title}</h3><p>{desc}</p></article>)}
         </div>
       </section>
 
       <section className="section works" id="works">
-        <header className="sectionHeader compact"><p>— Section 06 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
+        <header className="sectionHeader compact"><p>Section 06 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
         <div className="worksCarouselWrap">
           <button className="worksArrow worksArrowPrev" type="button" aria-label="이전 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: -390, behavior: "smooth" })}>〈</button>
           <div className="worksCarousel" ref={worksCarouselRef} aria-label="수강생 작품 자동 갤러리">
@@ -214,7 +214,7 @@ export default function Home() {
       </section>
 
       <section className="section reviewsSection" id="reviews">
-        <header className="sectionHeader compact"><p>— Section 07 · Reviews</p><h2>수강 <em>후기</em></h2><p className="sectionIntro">교육 현장에서 직접 경험한 수강생들의 이야기를 전합니다.</p></header>
+        <header className="sectionHeader compact"><p>Section 07 · Reviews</p><h2>수강 <em>후기</em></h2><p className="sectionIntro">교육 현장에서 직접 경험한 수강생들의 이야기를 전합니다.</p></header>
         <div className="reviewList" tabIndex={0} aria-label="수강 후기 목록, 위아래로 스크롤할 수 있습니다">
           {reviews.map(([quote, name, course, icon]) => <article className="reviewCard" key={name}>
             <blockquote>“{quote}”</blockquote>
