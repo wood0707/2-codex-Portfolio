@@ -94,7 +94,7 @@ export default function Home() {
           </div>
         </div>
         <div className="heroBottom">
-          <div><small>AI CONTENT EDUCATOR</small><strong>오영주 AI 전문 강사</strong></div>
+          <div className="heroIdentity"><small>AI CONTENT EDUCATOR</small><strong><b>오영주</b><span>AI 전문 강사</span></strong></div>
           <p>생성형 AI를 활용한<br />자립적 콘텐츠 제작 교육</p>
           <div className="miniTags"><span>콘텐츠 기획</span><span>업무 자동화</span><span>AI 영상</span><span>퍼스널 브랜딩</span></div>
         </div>
@@ -174,7 +174,7 @@ export default function Home() {
           <h2><span>기술의 나열이 아닌</span><span><em>실무 워크플로우</em>를</span><span>지금 시작하세요</span></h2>
           <p>학교 · 기업 · 개인 모두 맞춤 커리큘럼으로 진행합니다</p>
           <div className="finalCtaActions">
-            <button type="button" onClick={() => setInquiryOpen(true)}>강의 문의하기</button>
+            <button type="button" onClick={() => setInquiryOpen(true)}>강의 문의</button>
             <a href="#programs">커리큘럼 보기 <span>→</span></a>
           </div>
         </div>
