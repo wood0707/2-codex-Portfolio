@@ -27,7 +27,7 @@ h3,.eyebrow,.sectionHeader>p:first-child,.contactLead>p:first-child,.programCard
 h1 { margin:25px 0 34px; font-size:clamp(48px,calc(5.4vw + 2px),84px); line-height:1.2; letter-spacing:-.065em; font-weight:900; word-break:keep-all; overflow-wrap:normal; }
 h1 span { display:block; word-break:keep-all; }
 .heroMiddle{white-space:nowrap;font-size:inherit}
-.heroCopy .eyebrow{animation:heroRise .7s ease-out both}.heroCopy h1 span{animation:heroRise .78s cubic-bezier(.22,.7,.25,1) both}.heroCopy h1 span:nth-child(1){animation-delay:.12s}.heroCopy h1 span:nth-child(2){animation-delay:.26s}.heroCopy h1 span:nth-child(3){animation-delay:.4s}.heroCopy .heroText{animation:heroRise .75s .52s ease-out both}.heroCopy .heroActions{margin-top:32px;animation:heroRise .75s .68s ease-out both}
+.heroCopy .eyebrow{color:var(--muted);animation:heroRise .7s ease-out both}.heroCopy h1 span{animation:heroRise .78s cubic-bezier(.22,.7,.25,1) both}.heroCopy h1 span:nth-child(1){animation-delay:.12s}.heroCopy h1 span:nth-child(2){animation-delay:.26s}.heroCopy h1 span:nth-child(3){animation-delay:.4s}.heroCopy .heroText{animation:heroRise .75s .52s ease-out both}.heroCopy .heroActions{margin-top:32px;animation:heroRise .75s .68s ease-out both}
 .coral { color:var(--coral); }.lavender { color:var(--lavender); }
 .heroText { max-width:570px; color:#626574; font-size:clamp(14px,1.3vw,17px); line-height:1.85; }
 .heroActions { display:flex; gap:26px; align-items:center; margin-top:40px; }
