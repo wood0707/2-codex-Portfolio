@@ -133,8 +133,8 @@ export default function Home() {
         </div>
         <div className="heroProfileBar">
           <p className="heroRole">오 영 주 <span>·</span> AI 콘텐츠 전문 강사</p>
-          <p className="heroKeywords">콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</p>
           <div className="heroText"><p>생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 효율화, 바이브코딩까지 폭넓은 실무 교육을 진행합니다.</p></div>
+          <p className="heroKeywords">콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</p>
         </div>
       </section>
 
