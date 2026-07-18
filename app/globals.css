@@ -84,3 +84,9 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroAboutCopy p strong { color:var(--ink); font-weight:700; }
 @media (max-width:900px) { .heroBottomSimple { grid-template-columns:1fr 1fr; }.heroAboutCopy { grid-column:1 / -1; } }
 @media (max-width:560px) { .heroBottomSimple { grid-template-columns:1fr; gap:18px; padding:24px 0; }.heroAboutCopy { grid-column:auto; }.heroAboutTitle strong{font-size:18px}.heroAboutCopy p{font-size:13px;line-height:1.7} }
+.heroBottomSimple { grid-template-columns:minmax(180px,.55fr) minmax(520px,2fr); align-items:center; }
+.heroAboutTitle strong em { color:var(--coral); font-style:normal; }
+.heroAboutKeywords { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.heroAboutKeywords span { padding:8px 14px; border:1px solid #d7b9b4; border-radius:999px; background:rgba(255,255,255,.72); color:#a95453; font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:12px; font-weight:700; }
+@media (max-width:900px) { .heroBottomSimple { grid-template-columns:minmax(160px,.55fr) minmax(0,2fr); }.heroAboutCopy { grid-column:auto; } }
+@media (max-width:560px) { .heroBottomSimple { grid-template-columns:1fr; }.heroAboutKeywords{gap:8px}.heroAboutKeywords span{padding:7px 11px;font-size:11px} }

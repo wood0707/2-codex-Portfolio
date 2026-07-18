@@ -100,11 +100,10 @@ export default function Home() {
           </div>
         </div>
         <div className="heroBottom heroBottomSimple">
-          <div className="heroIdentity"><small>AI CONTENT EDUCATOR</small><strong><b>오 영 주</b><span>생성형 AI 활용 전문 강사</span></strong></div>
-          <div className="heroAboutTitle"><small>ABOUT THE EDUCATOR</small><strong>강사 소개</strong></div>
+          <div className="heroAboutTitle"><small>ABOUT THE EDUCATOR</small><strong>강사 <em>소개</em></strong></div>
           <div className="heroAboutCopy">
             <p><strong>생성형 AI 활용과 AI 리터러시 교육을 기반으로, 업무 효율화와 콘텐츠 제작을 연결하는 실무형 교육을 설계하고 있습니다.</strong></p>
-            <p>기업·기관·학교 현장에서 다양한 교육 경험을 바탕으로, AI를 실제 업무 성과로 전환할 수 있는 활용 역량을 전달합니다.</p>
+            <div className="heroAboutKeywords"><span>콘텐츠 기획</span><span>업무 자동화</span><span>AI 영상</span><span>퍼스널 브랜딩</span></div>
           </div>
         </div>
       </section>
