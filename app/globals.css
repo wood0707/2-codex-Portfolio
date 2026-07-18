@@ -75,3 +75,4 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 @media (max-width:560px) { .programCard{min-height:430px}.programCard h3{margin-top:225px}.programIcon{top:78px} }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.skillCard,.revealItem,.primaryBtn,.finalCtaActions button,.finalCtaActions a{transition:none}.programIcon,.heartBurst i,.heroCopy .eyebrow,.heroName,.heroCopy h1 span,.heroCopy .heroText,.heroCopy .heroActions,.ctaOrbLeft,.ctaOrbRight{animation:none}.revealItem{opacity:1;transform:none}}
 .lavenderBlock ul { font-weight:600; }
+.experienceList strong .experienceLine { display:block; color:inherit; font-size:inherit; }

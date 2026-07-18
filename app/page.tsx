@@ -20,13 +20,13 @@ const keyRoles = [
 ];
 
 const practicalTeachingExperiences = [
-  "MBC아카데미컴퓨터학원",
-  "(재)서울현대교육재단",
+  "MBC아카데미컴퓨터학원 · AI 활용, 그래픽 디자인",
+  "(재)서울현대교육재단 · IT 직무 교육",
   "2025, 2026 희망리턴패키지 재기사업화 채움멘토",
-  "(주)지아이에듀테크",
+  "NCS 확인강사\n(주)지아이에듀테크",
   "(주)카버코리아 디자인팀",
   "(주)삼덕공사 디자인팀 · 의전행사",
-  "NCS 확인강사",
+  "",
   "그린컴퓨터아트학원 · 3D MAX",
   "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
 ];
@@ -140,7 +140,7 @@ export default function Home() {
           <p className="sectionIntro experienceIntro">교육, 디자인, 생성형 AI를 연결해 현장 중심의 배움을 설계합니다.</p>
           <div className="experienceColumns">
             <article className="experienceGroup"><h3><span>01</span> 주요 활동 및 직책</h3><ol className="experienceList">{keyRoles.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
-            <article className="experienceGroup"><h3><span>02</span> 실무 및 강의 경력</h3><ol className="experienceList">{practicalTeachingExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
+            <article className="experienceGroup"><h3><span>02</span> 실무 및 강의 경력</h3><ol className="experienceList">{practicalTeachingExperiences.map((item, index) => <li key={`${index}-${item}`}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.split("\n").map((line, lineIndex) => <span className="experienceLine" key={`${lineIndex}-${line}`}>{line}</span>)}</strong></li>)}</ol></article>
           </div>
         </div>
       </section>
