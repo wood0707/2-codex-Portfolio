@@ -157,12 +157,12 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .programCard:nth-child(4) .programIcon { animation-delay:-3.3s; }
 @keyframes programFloat { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-10px) rotate(5deg)} }
 @keyframes programPop { 0%{transform:translateY(0) scale(1) rotate(0)} 45%{transform:translateY(-13px) scale(1.28) rotate(10deg)} 72%{transform:translateY(-8px) scale(1.14) rotate(-3deg)} 100%{transform:translateY(-9px) scale(1.18) rotate(2deg)} }
-.worksCarouselWrap { position:relative; width:100%; margin:0; overflow:hidden; }
+.worksCarouselWrap { position:relative; left:50%; width:100vw; margin-left:-50vw; overflow:hidden; }
 .worksCarouselWrap:focus-within .worksTrack { animation-play-state:paused; }
 .worksArrow { position:absolute; z-index:4; top:38%; width:48px; height:48px; display:grid; place-items:center; border:1px solid rgba(27,24,45,.14); border-radius:50%; background:rgba(255,255,255,.9); color:var(--ink); font-size:22px; cursor:pointer; backdrop-filter:blur(5px); transition:background .2s ease,color .2s ease,transform .2s ease; }
 .worksArrow:hover { background:var(--coral); color:#fff; transform:scale(1.06); }
-.worksArrowPrev { left:-2.6vw; }
-.worksArrowNext { right:-2.6vw; }
+.worksArrowPrev { left:18px; }
+.worksArrowNext { right:18px; }
 @media (max-width:560px) { .worksArrow{top:34%;width:42px;height:42px;font-size:19px}.worksArrowPrev{left:-12px}.worksArrowNext{right:-12px} }
 .programs .sectionHeader>p:first-child,.programs .sectionHeader h2 span,.programs .sectionHeader h2 em,.programs .sectionHeader .sectionIntro { opacity:0; transform:translateY(24px); }
 .programs .sectionHeader.isVisible>p:first-child { animation:heroRise .65s ease-out both; }
