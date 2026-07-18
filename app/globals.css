@@ -116,3 +116,5 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroText p+p { margin-top:8px; }
 .heroText strong { color:#3f4251; font-weight:700; }
 @media (max-width:560px) { .hero{padding-bottom:52px}.heroRole{font-size:14px}.heroText p+p{margin-top:7px} }
+.heroRole { margin:0 0 14px; }
+@media (max-width:560px) { .heroRole{margin-bottom:11px} }
