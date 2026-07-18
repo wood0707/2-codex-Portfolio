@@ -38,6 +38,11 @@ const programs = [
   ["PROGRAM 04", "AI 광고·브랜드 마케팅", "브랜드 홍보에 필요한 광고 콘텐츠와 시각 결과물을 제작합니다."],
 ];
 
+const studentWorks = [
+  ...Array.from({ length: 12 }, (_, index) => ({ src: `/student-works/brand-${String(index + 1).padStart(2, "0")}${[0, 4, 5, 6].includes(index) ? ".jpg" : ".png"}`, category: "LOGO & BRANDING", title: `로고·브랜딩 작품 ${String(index + 1).padStart(2, "0")}` })),
+  ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `AI 이미지 작품 ${String(index + 1).padStart(2, "0")}` })),
+];
+
 export default function Home() {
   const [sent, setSent] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -169,9 +174,13 @@ export default function Home() {
 
       <section className="section works" id="works">
         <header className="sectionHeader compact"><p>— Section 06 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
-        <div className="workGrid">
-          <article><div className="workVisual workA"><span>BRAND<br />WITH AI</span></div><p>수강생 A</p><h3>AI 활용 브랜딩 포트폴리오</h3></article>
-          <article><div className="workVisual workB"><span>SHORT<br />FORM</span></div><p>수강생 B</p><h3>숏폼 마케팅 영상 시리즈</h3></article>
+        <div className="worksCarousel" aria-label="수강생 작품 자동 갤러리">
+          <div className="worksTrack">
+            {[...studentWorks, ...studentWorks].map((work, index) => <article className="workCard" key={`${work.src}-${index}`} aria-hidden={index >= studentWorks.length}>
+              <div className="workImage"><img src={work.src} alt={index < studentWorks.length ? work.title : ""} loading="lazy" /></div>
+              <p>{work.category}</p><h3>{work.title}</h3>
+            </article>)}
+          </div>
         </div>
       </section>
 
