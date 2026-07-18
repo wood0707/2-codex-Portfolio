@@ -27,7 +27,7 @@ h3,.eyebrow,.sectionHeader>p:first-child,.contactLead>p:first-child,.programCard
 h1 { margin:25px 0 34px; font-size:clamp(48px,calc(5.4vw + 2px),84px); line-height:1.2; letter-spacing:-.065em; font-weight:900; word-break:keep-all; overflow-wrap:normal; }
 h1 span { display:block; word-break:keep-all; }
 .heroMiddle{white-space:nowrap;font-size:inherit}
-.heroCopy .eyebrow{color:var(--muted);animation:heroRise .7s ease-out both}.heroCopy h1 span{animation:heroRise .78s cubic-bezier(.22,.7,.25,1) both}.heroCopy h1 span:nth-child(1){animation-delay:.12s}.heroCopy h1 span:nth-child(2){animation-delay:.26s}.heroCopy h1 span:nth-child(3){animation-delay:.4s}.heroCopy .heroText{animation:heroRise .75s .52s ease-out both}.heroCopy .heroActions{margin-top:32px;animation:heroRise .75s .68s ease-out both}
+.heroCopy .eyebrow{color:var(--muted);font-size:14px;animation:heroRise .7s ease-out both}.heroCopy h1 span{animation:heroRise .78s cubic-bezier(.22,.7,.25,1) both}.heroCopy h1 span:nth-child(1){animation-delay:.12s}.heroCopy h1 span:nth-child(2){animation-delay:.26s}.heroCopy h1 span:nth-child(3){animation-delay:.4s}.heroCopy .heroText{animation:heroRise .75s .52s ease-out both}.heroCopy .heroActions{margin-top:32px;animation:heroRise .75s .68s ease-out both}
 .coral { color:var(--coral); }.lavender { color:var(--lavender); }
 .heroText { max-width:570px; color:#626574; font-size:clamp(14px,1.3vw,17px); line-height:1.85; }
 .heroActions { display:flex; gap:26px; align-items:center; margin-top:40px; }
@@ -112,7 +112,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroKeywords i { display:inline-block; width:8px; height:8px; margin:0 12px 1px 1px; background:var(--coral); transform:rotate(45deg); }
 @media (max-width:560px) { .heroKeywords{margin-top:24px;font-size:12px;line-height:2}.heroKeywords span{margin:0 5px} }
 .hero { padding-bottom:70px; }
-.heroRole { margin:16px 0 0; color:var(--ink); font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:17px; font-weight:700; letter-spacing:-.02em; animation:heroRise .72s .08s ease-out both; }
+.heroRole { margin:16px 0 0; color:var(--ink); font-family:"Noto Sans KR","Malgun Gothic",sans-serif; font-size:17px; font-weight:500; letter-spacing:-.02em; animation:heroRise .72s .08s ease-out both; }
 .heroRole span { margin:0 7px; color:var(--coral); }
 .heroText p { margin:0; }
 .heroText p+p { margin-top:8px; }
@@ -121,8 +121,8 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroRole { margin:78px 0 17px; font-size:23px; }
 .heroRole,.heroText,.heroKeywords { padding-left:12px; }
 .heroText { max-width:680px; font-size:18px; font-weight:700; }
-.heroKeywords { font-size:18px; font-weight:500; }
-@media (max-width:560px) { .heroRole{margin:48px 0 13px;font-size:18px}.heroText{font-size:15px}.heroKeywords{font-size:15px} }
+.heroKeywords { margin-top:16px; font-size:18px; font-weight:500; }
+@media (max-width:560px) { .heroCopy .eyebrow{font-size:11px}.heroRole{margin:48px 0 13px;font-size:18px}.heroText{font-size:15px}.heroKeywords{margin-top:14px;font-size:15px} }
 .topBrand { letter-spacing:.04em; }
 @media (max-width:560px) { .topBrand{letter-spacing:.02em} }
 .reviewsSection { background:#fff; }
