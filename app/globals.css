@@ -151,3 +151,9 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .worksArrowPrev { left:-2.6vw; }
 .worksArrowNext { right:-2.6vw; }
 @media (max-width:560px) { .worksArrow{top:34%;width:42px;height:42px;font-size:19px}.worksArrowPrev{left:-12px}.worksArrowNext{right:-12px} }
+.programs .sectionHeader>p:first-child,.programs .sectionHeader h2 span,.programs .sectionHeader h2 em,.programs .sectionHeader .sectionIntro { opacity:0; transform:translateY(24px); }
+.programs .sectionHeader.isVisible>p:first-child { animation:heroRise .65s ease-out both; }
+.programs .sectionHeader.isVisible h2 span { display:inline-block; animation:heroRise .75s .12s cubic-bezier(.22,.7,.25,1) both; }
+.programs .sectionHeader.isVisible h2 em { display:inline-block; animation:heroRise .75s .27s cubic-bezier(.22,.7,.25,1) both; }
+.programs .sectionHeader.isVisible .sectionIntro { animation:heroRise .7s .42s ease-out both; }
+@media (prefers-reduced-motion:reduce) { .programs .sectionHeader>p:first-child,.programs .sectionHeader h2 span,.programs .sectionHeader h2 em,.programs .sectionHeader .sectionIntro{opacity:1;transform:none;animation:none} }

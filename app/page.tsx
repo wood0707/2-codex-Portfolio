@@ -169,7 +169,7 @@ export default function Home() {
       </section>
 
       <section className="section programs" id="programs">
-        <header className="sectionHeader compact staticHeader"><p>— Section 05 · Programs</p><h2>핵심 프로그램 <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
+        <header className="sectionHeader compact staticHeader"><p>— Section 05 · Programs</p><h2><span>핵심 프로그램</span> <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
         <div className="programGrid">
           {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{["✦", "◌", "↗", "◎"][index]}</div><h3>{title}</h3><p>{desc}</p></article>)}
         </div>
