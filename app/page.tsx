@@ -23,10 +23,10 @@ const practicalTeachingExperiences = [
   "MBC아카데미컴퓨터학원 · AI 활용, 그래픽 디자인",
   "(재)서울현대교육재단 · IT 직무 교육",
   "2025, 2026 희망리턴패키지 재기사업화 채움멘토",
-  "NCS 확인강사\n(주)지아이에듀테크",
+  "NCS 확인강사",
+  "(주)지아이에듀테크",
   "(주)카버코리아 디자인팀",
   "(주)삼덕공사 디자인팀 · 의전행사",
-  "",
   "그린컴퓨터아트학원 · 3D MAX",
   "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
 ];
@@ -101,18 +101,8 @@ export default function Home() {
         </div>
         <div className="heroBottom heroBottomSimple">
           <div className="heroIdentity"><small>AI CONTENT EDUCATOR</small><strong><b>오 영 주</b><span>생성형 AI 활용 전문 강사</span></strong></div>
-          <p>생성형 AI를 활용한<br />자립적 콘텐츠 제작 교육</p>
-        </div>
-      </section>
-
-      <section className="instructorIntro" id="about">
-        <header className="aboutHeader">
-          <p>ABOUT THE EDUCATOR</p>
-          <h2>강사 <em>소개</em></h2>
-          <span>현장에서 바로 적용 가능한 생성형 AI 활용 교육을 설계합니다.</span>
-        </header>
-        <div className="aboutLayout">
-          <div className="aboutText">
+          <div className="heroAboutTitle"><small>ABOUT THE EDUCATOR</small><strong>강사 소개</strong></div>
+          <div className="heroAboutCopy">
             <p><strong>생성형 AI 활용과 AI 리터러시 교육을 기반으로, 업무 효율화와 콘텐츠 제작을 연결하는 실무형 교육을 설계하고 있습니다.</strong></p>
             <p>기업·기관·학교 현장에서 다양한 교육 경험을 바탕으로, AI를 실제 업무 성과로 전환할 수 있는 활용 역량을 전달합니다.</p>
           </div>
