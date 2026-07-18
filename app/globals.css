@@ -123,7 +123,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroText { max-width:680px; font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:18px; font-weight:700; }
 .heroKeywords { margin-top:16px; font-size:18px; font-weight:500; }
 @media (max-width:560px) { .heroCopy .eyebrow{font-size:13px}.heroRole{margin:48px 0 13px;font-size:18px}.heroText{font-size:15px}.heroKeywords{margin-top:14px;font-size:15px} }
-.heroProfileBar { position:absolute; z-index:2; left:0; right:0; bottom:0; display:grid; grid-template-columns:minmax(260px,.8fr) minmax(420px,1.5fr) minmax(420px,1.35fr); align-items:center; gap:34px; margin:0; padding:26px 4.3vw 28px; border-top:1px solid rgba(221,216,210,.55); background:rgba(255,255,255,.52); backdrop-filter:blur(8px); }
+.heroProfileBar { position:absolute; z-index:2; left:0; right:0; bottom:0; display:grid; grid-template-columns:minmax(260px,.8fr) minmax(420px,1.5fr) minmax(420px,1.35fr); align-items:center; gap:34px; margin:0; padding:26px 4.3vw 28px; border:0; background:rgba(255,255,255,.4); backdrop-filter:blur(8px); }
 .heroProfileBar .heroRole,.heroProfileBar .heroText,.heroProfileBar .heroKeywords { margin:0; padding-left:0; }
 .heroProfileBar .heroRole { font-size:20px; }
 .heroProfileBar .heroText { max-width:none; font-size:15px; line-height:1.75; }
