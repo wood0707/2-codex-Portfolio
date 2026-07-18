@@ -45,7 +45,7 @@ export default function Home() {
   const [heartBurst, setHeartBurst] = useState(0);
 
   useEffect(() => {
-    const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .finalCtaInner");
+    const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .sectionHeader:not(.staticHeader), .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .workGrid article, .finalCtaInner");
     items.forEach((item, index) => {
       item.classList.add("revealItem");
       item.style.setProperty("--reveal-delay", `${(index % 4) * 80}ms`);
@@ -94,11 +94,14 @@ export default function Home() {
             <span className="lavender">생성형 AI 교육 전문가</span>
           </h1>
           <p className="heroText">생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 자동화와 바이브코딩까지. 기술을 나열하는 교육이 아닌, 현장에서 바로 활용하는 경험을 설계합니다.</p>
-          <p className="heroName"><b>오 영 주</b><span>생성형 AI 활용 전문 강사</span></p>
           <div className="heroActions">
             <button className="primaryBtn" type="button" onClick={() => setInquiryOpen(true)}>강의 문의하기</button>
             <a className="textBtn" href="#programs">프로그램 보기 <span>→</span></a>
           </div>
+        </div>
+        <div className="heroBottom heroBottomSimple">
+          <div className="heroIdentity"><small>AI CONTENT EDUCATOR</small><strong><b>오 영 주</b><span>생성형 AI 활용 전문 강사</span></strong></div>
+          <p>생성형 AI를 활용한<br />자립적 콘텐츠 제작 교육</p>
         </div>
       </section>
 
@@ -110,8 +113,8 @@ export default function Home() {
         </header>
         <div className="aboutLayout">
           <div className="aboutText">
-            <p>디자인 실무와 교육 현장에서 쌓은 경험을 바탕으로 생성형 AI를 콘텐츠 기획, 영상 제작, 업무 자동화와 바이브코딩까지 연결합니다.</p>
-            <p><strong>학습자가 도구 사용법에 머무르지 않고 자신의 아이디어를 실제 결과물로 완성하도록 돕는 것</strong>을 교육의 중심에 두고, 학교·기업·개인의 목표에 맞는 실용적인 커리큘럼을 설계합니다.</p>
+            <p><strong>생성형 AI 활용과 AI 리터러시 교육을 기반으로, 업무 효율화와 콘텐츠 제작을 연결하는 실무형 교육을 설계하고 있습니다.</strong></p>
+            <p>기업·기관·학교 현장에서 다양한 교육 경험을 바탕으로, AI를 실제 업무 성과로 전환할 수 있는 활용 역량을 전달합니다.</p>
           </div>
         </div>
       </section>
@@ -169,7 +172,7 @@ export default function Home() {
       </section>
 
       <section className="section programs" id="programs">
-        <header className="sectionHeader compact"><p>— Section 05 · Programs</p><h2>핵심 프로그램 <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
+        <header className="sectionHeader compact staticHeader"><p>— Section 05 · Programs</p><h2>핵심 프로그램 <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
         <div className="programGrid">
           {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{["✦", "◌", "↗", "◎"][index]}</div><h3>{title}</h3><p>{desc}</p></article>)}
         </div>
