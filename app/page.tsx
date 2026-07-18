@@ -45,7 +45,7 @@ export default function Home() {
   const [heartBurst, setHeartBurst] = useState(0);
 
   useEffect(() => {
-    const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .aboutRoles li, .sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .finalCtaInner");
+    const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .finalCtaInner");
     items.forEach((item, index) => {
       item.classList.add("revealItem");
       item.style.setProperty("--reveal-delay", `${(index % 4) * 80}ms`);
@@ -105,7 +105,7 @@ export default function Home() {
       <section className="instructorIntro" id="about">
         <header className="aboutHeader">
           <p>ABOUT THE EDUCATOR</p>
-          <h2>강사 소개</h2>
+          <h2>강사 <em>소개</em></h2>
           <span>현장에서 바로 적용 가능한 생성형 AI 활용 교육을 설계합니다.</span>
         </header>
         <div className="aboutLayout">
@@ -113,13 +113,6 @@ export default function Home() {
             <p>디자인 실무와 교육 현장에서 쌓은 경험을 바탕으로 생성형 AI를 콘텐츠 기획, 영상 제작, 업무 자동화와 바이브코딩까지 연결합니다.</p>
             <p><strong>학습자가 도구 사용법에 머무르지 않고 자신의 아이디어를 실제 결과물로 완성하도록 돕는 것</strong>을 교육의 중심에 두고, 학교·기업·개인의 목표에 맞는 실용적인 커리큘럼을 설계합니다.</p>
           </div>
-          <ul className="aboutRoles">
-            <li>함온 AI 협동조합 이사</li>
-            <li>한국 AI 리터러시 강사 협회 이사</li>
-            <li>디지털융합교육원 지도교수</li>
-            <li>생성형 AI 콘텐츠 교육 전문가</li>
-            <li>AI 영상·브랜딩·업무 자동화 강사</li>
-          </ul>
         </div>
       </section>
 
