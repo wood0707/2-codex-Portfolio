@@ -24,7 +24,7 @@ h3,.eyebrow,.sectionHeader>p:first-child,.contactLead>p:first-child,.programCard
 .heroArt { position:absolute; inset:0; background:url('/youngjoo-hero-final.png') 68% center/cover no-repeat; opacity:1; pointer-events:none; }
 .heroCopy { position:relative; z-index:2; max-width:770px; padding-top:95px; }
 .eyebrow,.sectionHeader>p:first-child,.contactLead>p:first-child { font-size:12px; font-weight:900; letter-spacing:.2em; text-transform:uppercase; }
-h1 { margin:25px 0 34px; font-size:clamp(46px,5.4vw,82px); line-height:1.2; letter-spacing:-.065em; font-weight:900; word-break:keep-all; overflow-wrap:normal; }
+h1 { margin:25px 0 34px; font-size:clamp(48px,calc(5.4vw + 2px),84px); line-height:1.2; letter-spacing:-.065em; font-weight:900; word-break:keep-all; overflow-wrap:normal; }
 h1 span { display:block; word-break:keep-all; }
 .heroMiddle{white-space:nowrap;font-size:inherit}
 .heroCopy .eyebrow{animation:heroRise .7s ease-out both}.heroCopy h1 span{animation:heroRise .78s cubic-bezier(.22,.7,.25,1) both}.heroCopy h1 span:nth-child(1){animation-delay:.12s}.heroCopy h1 span:nth-child(2){animation-delay:.26s}.heroCopy h1 span:nth-child(3){animation-delay:.4s}.heroCopy .heroText{animation:heroRise .75s .52s ease-out both}.heroCopy .heroActions{margin-top:32px;animation:heroRise .75s .68s ease-out both}
@@ -64,7 +64,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 @media (max-width:380px) { h1{font-size:30px}.hero{padding-left:18px;padding-right:18px}.heroActions{gap:8px}.primaryBtn{padding:13px 14px}.textBtn{font-size:14px}.skillsHeader h2{font-size:34px} }
 @media (max-width:560px) { .topBrand{font-size:clamp(10px,2.9vw,13px);letter-spacing:.035em} }
 @media (max-width:560px) { .heroMiddle{font-size:inherit} }
-@media (max-width:560px) { h1{font-size:clamp(28px,8.2vw,36px);line-height:1.25} }
+@media (max-width:560px) { h1{font-size:clamp(30px,calc(8.2vw + 2px),38px);line-height:1.25} }
 @media (max-width:560px) { .heroName{gap:8px;flex-wrap:wrap;margin:20px 0 14px}.heroName b{font-size:16px}.heroName span{font-size:12px} }
 @media (max-width:560px) { .heroHeartAction{right:-18px;top:38%;width:145px}.heartBurst i{font-size:20px}.heartBurst i:nth-child(n){--x:calc(var(--x) * .62);--y:calc(var(--y) * .62)} }
 @media (max-width:560px) { .sectionHeader h2,.skillsHeader h2{font-size:35px} }
