@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <main>
       <nav className="nav">
-        <a className="brand topBrand" href="#top" aria-label="처음으로">OH YOUNG JOO · 생성형 AI 활용 전문 강사</a>
+        <a className="brand topBrand" href="#top" aria-label="처음으로">AI WORKFLOW ARCHITECT</a>
         <button className="menuToggle" type="button" aria-label="메뉴 열기" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
           <span /><span /><span />
         </button>

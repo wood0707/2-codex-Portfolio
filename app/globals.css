@@ -4,7 +4,7 @@
 @font-face { font-family:"Gmarket Sans"; src:url('/fonts/GmarketSansMedium.otf') format('opentype'); font-weight:500; font-style:normal; font-display:swap; }
 @font-face { font-family:"Gmarket Sans"; src:url('/fonts/GmarketSansBold.otf') format('opentype'); font-weight:700; font-style:normal; font-display:swap; }
 
-:root { --ink:#192138; --coral:#dd776f; --lavender:#b69abb; --sand:#f7f2e9; --line:#ddd8d2; --muted:#6f7080; }
+:root { --ink:#1c192e; --coral:#eb6e69; --lavender:#c39dca; --sand:#f7f2e9; --line:#ddd8d2; --muted:#6f6b84; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; overflow-x:hidden; color:var(--ink); background:#fff; font-family:"Noto Sans KR","Malgun Gothic",sans-serif; }
