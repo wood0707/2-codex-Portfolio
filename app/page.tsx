@@ -40,7 +40,7 @@ const programs = [
 
 const studentWorks = [
   ...Array.from({ length: 12 }, (_, index) => ({ src: `/student-works/brand-${String(index + 1).padStart(2, "0")}${[0, 4, 5, 6].includes(index) ? ".jpg" : ".png"}`, category: "LOGO & BRANDING", title: `로고·브랜딩 작품 ${String(index + 1).padStart(2, "0")}` })),
-  ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `AI 이미지 작품 ${String(index + 1).padStart(2, "0")}` })),
+  ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `작품 ${String(index + 1).padStart(2, "0")}` })),
 ];
 
 export default function Home() {
