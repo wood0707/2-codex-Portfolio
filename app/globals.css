@@ -117,7 +117,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroText p+p { margin-top:8px; }
 .heroText strong { color:#3f4251; font-weight:700; }
 @media (max-width:560px) { .hero{padding-bottom:52px}.heroRole{font-size:14px}.heroText p+p{margin-top:7px} }
-.heroRole { margin:20px 0 14px; font-size:20px; }
+.heroRole { margin:36px 0 14px; font-size:20px; }
 .heroRole,.heroText,.heroKeywords { padding-left:12px; }
 .heroText { font-weight:700; }
-@media (max-width:560px) { .heroRole{margin:15px 0 11px;font-size:16px} }
+@media (max-width:560px) { .heroRole{margin:26px 0 11px;font-size:16px} }
