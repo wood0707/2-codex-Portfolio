@@ -4,7 +4,7 @@ import { FormEvent, useEffect, useState } from "react";
 
 const skills = [
   "생성형 AI 콘텐츠 제작 교육",
-  "퍼스널 브랜딩 · 로고 기획",
+  "퍼스널 브랜딩 네임 · 로고 기획 및 제작",
   "숏폼 콘텐츠 · AI 영상 제작",
   "프롬프트 엔지니어링",
   "업무 생산성 자동화",
@@ -82,6 +82,7 @@ export default function Home() {
         <div className="heroArt" aria-hidden="true" />
         <div className="heroCopy">
           <p className="eyebrow">GENERATIVE AI EDUCATOR · CONTENT DIRECTOR</p>
+          <p className="heroName"><b>오 영 주</b><span>생성형 AI 활용 전문 강사</span></p>
           <h1>
             <span className="coral">생각을 콘텐츠로,</span>
             <span className="heroMiddle">콘텐츠를 성과로 만드는</span>
@@ -113,7 +114,7 @@ export default function Home() {
           <h2>주요 <em>경력</em></h2>
         </header>
         <div className="experienceWrap">
-          <p className="bigStatement">교육, 디자인, 생성형 AI를 연결해<br />현장 중심의 배움을 설계합니다.</p>
+          <p className="bigStatement">교육, 디자인, 생성형 AI를 연결해 현장 중심의 배움을 설계합니다.</p>
           <div className="experienceColumns">
             <article className="experienceGroup"><h3><span>01</span> AI·디지털 교육 경력</h3><ol className="experienceList">{aiEducationExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
             <article className="experienceGroup"><h3><span>02</span> 디자인·콘텐츠 실무 경력</h3><ol className="experienceList">{designContentExperiences.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
