@@ -27,7 +27,7 @@ h3,.eyebrow,.sectionHeader>p:first-child,.contactLead>p:first-child,.programCard
 h1 { margin:25px 0 34px; font-size:clamp(48px,calc(5.4vw + 2px),84px); line-height:1.2; letter-spacing:-.065em; font-weight:900; word-break:keep-all; overflow-wrap:normal; }
 h1 span { display:block; word-break:keep-all; }
 .heroMiddle{white-space:nowrap;font-size:inherit}
-.heroCopy .eyebrow{color:var(--muted);font-size:14px;animation:heroRise .7s ease-out both}.heroCopy h1 span{animation:heroRise .78s cubic-bezier(.22,.7,.25,1) both}.heroCopy h1 span:nth-child(1){animation-delay:.12s}.heroCopy h1 span:nth-child(2){animation-delay:.26s}.heroCopy h1 span:nth-child(3){animation-delay:.4s}.heroCopy .heroText{animation:heroRise .75s .52s ease-out both}.heroCopy .heroActions{margin-top:32px;animation:heroRise .75s .68s ease-out both}
+.heroCopy .eyebrow{color:var(--muted);font-size:16px;animation:heroRise .7s ease-out both}.heroCopy h1 span{animation:heroRise .78s cubic-bezier(.22,.7,.25,1) both}.heroCopy h1 span:nth-child(1){animation-delay:.12s}.heroCopy h1 span:nth-child(2){animation-delay:.26s}.heroCopy h1 span:nth-child(3){animation-delay:.4s}.heroCopy .heroText{animation:heroRise .75s .52s ease-out both}.heroCopy .heroActions{margin-top:32px;animation:heroRise .75s .68s ease-out both}
 .coral { color:var(--coral); }.lavender { color:var(--lavender); }
 .heroText { max-width:570px; color:#626574; font-size:clamp(14px,1.3vw,17px); line-height:1.85; }
 .heroActions { display:flex; gap:26px; align-items:center; margin-top:40px; }
@@ -122,7 +122,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .heroRole,.heroText,.heroKeywords { padding-left:12px; }
 .heroText { max-width:680px; font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:18px; font-weight:700; }
 .heroKeywords { margin-top:16px; font-size:18px; font-weight:500; }
-@media (max-width:560px) { .heroCopy .eyebrow{font-size:11px}.heroRole{margin:48px 0 13px;font-size:18px}.heroText{font-size:15px}.heroKeywords{margin-top:14px;font-size:15px} }
+@media (max-width:560px) { .heroCopy .eyebrow{font-size:13px}.heroRole{margin:48px 0 13px;font-size:18px}.heroText{font-size:15px}.heroKeywords{margin-top:14px;font-size:15px} }
 .heroProfileBar { position:absolute; z-index:2; left:0; right:0; bottom:0; display:grid; grid-template-columns:minmax(260px,.8fr) minmax(420px,1.5fr) minmax(420px,1.35fr); align-items:center; gap:34px; margin:0; padding:26px 4.3vw 28px; border-top:1px solid rgba(221,216,210,.55); background:rgba(255,255,255,.52); backdrop-filter:blur(8px); }
 .heroProfileBar .heroRole,.heroProfileBar .heroText,.heroProfileBar .heroKeywords { margin:0; padding-left:0; }
 .heroProfileBar .heroRole { font-size:20px; }
@@ -173,5 +173,5 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .contactForm button:disabled { cursor:wait; opacity:.65; }
 .formError { color:#b74d4b; }
 .credentialBlock:nth-child(2) ul { font-size:19px; }
-.sectionHeader h2,.skillsHeader h2,.aboutHeader h2 { font-weight:300; }
-.skillsHeader h2 { font-weight:500; }
+.sectionHeader h2,.skillsHeader h2,.aboutHeader h2 { width:111.111%; font-weight:700; transform:scaleX(.9); transform-origin:left center; }
+.experienceGroup h3 { width:111.111%; transform:scaleX(.9); transform-origin:left center; }
