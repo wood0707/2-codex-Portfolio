@@ -15,20 +15,20 @@ const keyRoles = [
   "함온 AI 협동 조합 이사",
   "한국 AI 리터러시 강사 협회 이사",
   "디지털융합교육원 지도교수",
-  "SIAFF 제3회 AI 영화제 심사위원",
+  "제3회 SIAFF AI 영화제 심사위원",
   "고양영상미디어 지역 커뮤니티 [APS] 대표",
 ];
 
 const practicalTeachingExperiences = [
   "MBC아카데미컴퓨터학원 · 훈련교사",
   "(재)서울현대교육재단 · IT 직무 교육",
-  "2025, 2026 희망리턴패키지 재기사업화 채움멘토",
+  "2025년, 2026년 희망리턴패키지 재기사업화 채움멘토",
   "(주)지아이에듀테크 · 전임강사",
   "(주)카버코리아 디자인팀",
   "(주)삼덕공사 디자인팀 · 의전행사",
   "그린컴퓨터아트학원 · 3D MAX",
-  "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
   "NCS 확인강사",
+  "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
 ];
 
 const programs = [
@@ -60,13 +60,13 @@ const videoWorks = [
     title: "vStory 숏폼 영상",
   },
   {
-    videoId: "GKqY2yASrCo",
-    title: "CU 편의점 광고 · 공모전 출품작",
+    videoId: "9JSiSvuYJ4w",
+    title: "K-뷰티 광고 · 공모전 출품작",
     landscape: true,
   },
   {
-    videoId: "9JSiSvuYJ4w",
-    title: "K-뷰티 광고 · 공모전 출품작",
+    videoId: "GKqY2yASrCo",
+    title: "CU 편의점 광고 · 공모전 출품작",
     landscape: true,
   },
 ];
@@ -202,7 +202,7 @@ export default function Home() {
         <div className="credentials">
           <div className="credentialBlock">
           <p>AWARDS &amp; ACTIVITIES</p>
-          <ul><li>인공지능 콘텐츠 강사 경진대회 &apos;대상&apos;</li><li>대한민국 AI 영상제 &apos;최우수상&apos;</li><li>SIAFF 제3회 AI 영화제 심사위원</li><li>고양영상미디어 지역 커뮤니티 [APS] 대표</li></ul>
+          <ul><li>인공지능 콘텐츠 강사 경진대회 &apos;대상&apos;</li><li>대한민국 AI 영상제 &apos;최우수상&apos;</li><li>제3회 SIAFF AI 영화제 심사위원</li><li>고양영상미디어 지역 커뮤니티 [APS] 대표</li></ul>
           </div>
           <div className="credentialBlock lavenderBlock">
           <p>CERTIFICATIONS</p>
@@ -243,11 +243,13 @@ export default function Home() {
         </div>
         <div className="videoWorks">
           <h3>AI 커머셜 · 숏폼 영상</h3>
-          <div className="videoWorksTrack">
-            {videoWorks.map((work, index) => <article className={`videoWorkCard ${work.landscape ? "isLandscape" : ""}`} key={work.videoId}>
-              <iframe src={`https://www.youtube-nocookie.com/embed/${work.videoId}`} title={work.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
-              <p>AI VIDEO {String(index + 1).padStart(2, "0")}</p><h4>{work.title}</h4>
-            </article>)}
+          <div className="videoCarouselWrap">
+            <div className="videoWorksTrack">
+              {videoWorks.map((work, index) => <article className={`videoWorkCard ${work.landscape ? "isLandscape" : ""}`} key={work.videoId}>
+                <iframe src={`https://www.youtube-nocookie.com/embed/${work.videoId}`} title={work.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+                <p>AI VIDEO {String(index + 1).padStart(2, "0")}</p><h4>{work.title}</h4>
+              </article>)}
+            </div>
           </div>
         </div>
       </section>
