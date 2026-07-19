@@ -40,7 +40,7 @@ const programs = [
 
 const studentWorks = [
   ...Array.from({ length: 12 }, (_, index) => ({ src: `/student-works/brand-${String(index + 1).padStart(2, "0")}${[0, 4, 5, 6].includes(index) ? ".jpg" : ".png"}`, category: "LOGO & BRANDING", title: `${[6, 7].includes(index) ? "아이덴티티 디자인 목업" : "로고디자인"} ${String(index + 1).padStart(2, "0")}` })),
-  ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `${index < 4 ? "숏폼 씬 구성" : "작품"} ${String(index + 1).padStart(2, "0")}` })),
+  ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `${index < 4 ? "숏츠 씬 구성" : "작품"} ${String(index + 1).padStart(2, "0")}` })),
 ];
 
 const videoWorks = [
@@ -222,7 +222,6 @@ export default function Home() {
 
       <section className="section works" id="works">
         <header className="sectionHeader compact"><p>Section 06 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
-        <h3 className="worksSubheading">AI 비주얼 · 로고 디자인</h3>
         <div className="worksCarouselWrap">
           <button className="worksArrow worksArrowPrev" type="button" aria-label="이전 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: -390, behavior: "smooth" })}>〈</button>
           <div className="worksCarousel" ref={worksCarouselRef} aria-label="수강생 작품 자동 갤러리">

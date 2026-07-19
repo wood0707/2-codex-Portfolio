@@ -91,7 +91,6 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 @media (max-width:900px) { .heroBottomSimple { grid-template-columns:minmax(160px,.55fr) minmax(0,2fr); }.heroAboutCopy { grid-column:auto; } }
 @media (max-width:560px) { .heroBottomSimple { grid-template-columns:1fr; }.heroAboutKeywords{gap:8px}.heroAboutKeywords span{padding:7px 11px;font-size:11px} }
 .works { overflow:hidden; }
-.worksSubheading { width:100%; margin:0 0 24px; font-size:24px; font-weight:700; }
 .worksCarousel { margin:0; overflow:hidden; padding:4px 0 14px; }
 .worksTrack { display:flex; width:max-content; gap:22px; animation:worksMarquee 70s linear infinite; will-change:transform; }
 .worksCarousel:hover .worksTrack,.worksCarousel:focus-within .worksTrack { animation-play-state:paused; }
@@ -102,7 +101,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .workCard>p { margin:16px 0 7px; color:var(--coral); font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:11px; font-weight:700; letter-spacing:.12em; }
 .workCard>h3 { margin:0; font-size:18px; line-height:1.45; }
 @keyframes worksMarquee { from{transform:translateX(0)} to{transform:translateX(calc(-50% - 11px))} }
-@media (max-width:560px) { .worksSubheading{margin-bottom:18px;font-size:21px}.worksCarousel{margin:0}.worksTrack{gap:14px;animation-duration:58s}.workCard{width:76vw}.workCard>h3{font-size:16px}@keyframes worksMarquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}} }
+@media (max-width:560px) { .worksCarousel{margin:0}.worksTrack{gap:14px;animation-duration:58s}.workCard{width:76vw}.workCard>h3{font-size:16px}@keyframes worksMarquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}} }
 @media (prefers-reduced-motion:reduce) { .worksTrack{animation:none;overflow-x:auto}.workImage img{transition:none} }
 .workImage img { object-fit:cover; object-position:center center; }
 .workImage img[src$="brand-03.png"] { object-fit:contain; width:106%; height:106%; margin:-3%; }
