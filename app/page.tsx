@@ -222,7 +222,7 @@ export default function Home() {
 
       <section className="section works" id="works">
         <header className="sectionHeader compact"><p>Section 06 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
-        <h3 className="worksSubheading">AI 작품</h3>
+        <h3 className="worksSubheading">AI 비주얼 · 로고 디자인</h3>
         <div className="worksCarouselWrap">
           <button className="worksArrow worksArrowPrev" type="button" aria-label="이전 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: -390, behavior: "smooth" })}>〈</button>
           <div className="worksCarousel" ref={worksCarouselRef} aria-label="수강생 작품 자동 갤러리">
@@ -248,7 +248,7 @@ export default function Home() {
 
       <section className="section reviewsSection" id="reviews">
         <header className="sectionHeader compact"><p>Section 07 · Reviews</p><h2>수강 <em>후기</em></h2><p className="sectionIntro">교육 현장에서 직접 경험한 수강생들의 이야기를 전합니다.</p></header>
-        <div className="reviewList" tabIndex={0} aria-label="수강 후기 목록, 위아래로 스크롤할 수 있습니다">
+        <div className="reviewList" tabIndex={0} aria-label="수강 후기 목록, 좌우로 스크롤할 수 있습니다">
           {reviews.map(([quote, name, course, icon]) => <article className="reviewCard" key={name}>
             <blockquote>“{quote}”</blockquote>
             <div className="reviewAuthor"><span aria-hidden="true">{icon}</span><p><span className="reviewNameRow"><strong>{name}</strong><span className="reviewStars" aria-label="별점 5점">★★★★★</span></span><small>{course}</small></p></div>
@@ -260,7 +260,7 @@ export default function Home() {
         <span className="ctaOrb ctaOrbLeft" aria-hidden="true" />
         <span className="ctaOrb ctaOrbRight" aria-hidden="true" />
         <div className="finalCtaInner">
-          <h2><span>기술의 나열이 아닌 <em>실무 워크플로우</em>를</span><span>지금 시작하세요.</span></h2>
+          <h2>기술의 나열이 아닌 <em>실무 워크플로우</em>를 지금 시작하세요.</h2>
           <p>학교 · 기업 · 개인 모두 맞춤 커리큘럼으로 진행합니다</p>
           <div className="finalCtaActions">
             <button type="button" onClick={() => setInquiryOpen(true)}>강의 문의</button>
