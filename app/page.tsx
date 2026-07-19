@@ -46,7 +46,23 @@ const studentWorks = [
 const videoWorks = [
   {
     videoId: "_dT7t16rNvI",
-    title: "AI 커머셜 · 숏폼 영상 01",
+    title: "공익광고",
+  },
+  {
+    videoId: "dFDLk6KUbqk",
+    title: "남극 고대 괴물 미스터리",
+  },
+  {
+    videoId: "9JSiSvuYJ4w",
+    title: "K-뷰티 광고 · 공모전 출품작",
+  },
+  {
+    videoId: "GKqY2yASrCo",
+    title: "CU 편의점 광고 · 공모전 출품작",
+  },
+  {
+    videoId: "NnirBh71wAc",
+    title: "vStory 숏폼 영상",
   },
 ];
 
