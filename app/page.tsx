@@ -33,9 +33,9 @@ const practicalTeachingExperiences = [
 
 const programs = [
   ["PROGRAM 01", "AI 기반 업무 효율화", "구글 워크스페이스와 생성형 AI를 활용해 문서 작성과 반복 업무를 간소화하고, Gems 기반의 맞춤형 AI 비서와 챗봇을 구축하여 실무 프로세스의 효율을 높이는 교육입니다."],
-  ["PROGRAM 02", "AI 콘텐츠 기획 및 제작", "생성형 AI를 활용해 아이디어를 기획하고, 이미지·영상·디자인 콘텐츠로 구체화하는 실습 중심의 제작 교육입니다."],
-  ["PROGRAM 03", "AI 영상·숏폼 제작", "콘텐츠 기획부터 이미지 생성, 영상 제작, 음성·음악 활용, 편집까지 AI 영상 콘텐츠의 전 과정을 완성하는 실습 중심 교육입니다."],
-  ["PROGRAM 04", "AI 광고·브랜드 마케팅", "브랜드 정체성과 타깃을 분석하고, 홍보와 마케팅에 활용할 수 있는 광고 콘텐츠와 시각 결과물을 제작하는 교육입니다."],
+  ["PROGRAM 02", "AI 콘텐츠 기획 및 제작", "생성형 AI를 활용해 아이디어를 발굴하고, 카드뉴스·포스터·이미지 콘텐츠 등 다양한 시각 콘텐츠로 구체화하는 실습 중심 교육입니다."],
+  ["PROGRAM 03", "AI 영상·숏폼 제작", "스토리 구성부터 이미지 생성, 영상 제작, 음성·음악 활용, 편집까지 AI 영상과 숏폼 콘텐츠를 완성하는 실습 중심 교육입니다."],
+  ["PROGRAM 04", "AI 광고·브랜드 마케팅", "브랜드 정체성과 타깃을 분석하고, 마케팅 전략을 바탕으로 광고 메시지와 홍보 콘텐츠를 기획·제작하는 실습 중심 교육입니다."],
 ];
 
 const brandWorkTitles = ["펀빌 · 퍼스널 브랜딩", "그로우로그 · 퍼스널 브랜딩", "오라트 · 퍼스널 브랜딩", "하리어스 · 퍼스널 브랜딩", "아임 프로 · 퍼스널 브랜딩", "그로우로그 · 퍼스널 브랜딩", "태권도 브랜드 아이덴티티", "디자인 프리즘 브랜드 아이덴티티", "루니브 · 퍼스널 브랜딩", "오픈지 · 퍼스널 브랜딩", "로그 포뮬러 · 퍼스널 브랜딩", "퍼럭스 · 퍼스널 브랜딩"];
@@ -88,7 +88,43 @@ export default function Home() {
   const [inquiryOpen, setInquiryOpen] = useState(false);
   const [heartBurst, setHeartBurst] = useState(0);
   const worksCarouselRef = useRef<HTMLDivElement>(null);
+  const videoCarouselRef = useRef<HTMLDivElement>(null);
   const reviewsCarouselRef = useRef<HTMLDivElement>(null);
+  const reviewIndexRef = useRef(0);
+  const heartOrbitRef = useRef<HTMLDivElement>(null);
+
+  const scrollReviews = (direction: 1 | -1) => {
+    const carousel = reviewsCarouselRef.current;
+    const card = carousel?.querySelector<HTMLElement>(".reviewCard");
+    if (!carousel || !card) return;
+    const styles = window.getComputedStyle(carousel);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 16;
+    const step = card.offsetWidth + gap;
+
+    if (direction === 1) {
+      const nextIndex = reviewIndexRef.current + 1;
+      carousel.scrollTo({ left: nextIndex * step, behavior: "smooth" });
+      if (nextIndex >= reviews.length) {
+        reviewIndexRef.current = 0;
+        window.setTimeout(() => carousel.scrollTo({ left: 0, behavior: "auto" }), 650);
+      } else {
+        reviewIndexRef.current = nextIndex;
+      }
+      return;
+    }
+
+    if (reviewIndexRef.current === 0) {
+      carousel.scrollTo({ left: reviews.length * step, behavior: "auto" });
+      reviewIndexRef.current = reviews.length;
+    }
+    reviewIndexRef.current -= 1;
+    window.requestAnimationFrame(() => carousel.scrollTo({ left: reviewIndexRef.current * step, behavior: "smooth" }));
+  };
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setHeartBurst((value) => value + 1), 100);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .sectionHeader:not(.staticHeader), .programs .sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .reviewCard, .finalCtaInner");
@@ -107,6 +143,83 @@ export default function Home() {
     items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const carousel = reviewsCarouselRef.current;
+    if (!carousel || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const timer = window.setInterval(() => scrollReviews(1), 3000);
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const orbit = heartOrbitRef.current;
+    if (!orbit || heartBurst === 0) return;
+
+    const { width, height } = orbit.getBoundingClientRect();
+    const isMobileOrbit = window.matchMedia("(max-width: 560px)").matches;
+    const fadeStart = isMobileOrbit ? .8 : .94;
+    const particles = Array.from(orbit.querySelectorAll<HTMLElement>("i"));
+    const rawPointOnCurve = (progress: number) => {
+      const angle = progress * Math.PI * 2;
+      const heartX = 16 * Math.sin(angle) ** 3;
+      const heartY = 13 * Math.cos(angle) - 5 * Math.cos(2 * angle) - 2 * Math.cos(3 * angle) - Math.cos(4 * angle);
+      const horizontalScale = heartX >= 0 ? .38 : .3;
+      return {
+        x: .43 + (heartX / 16) * horizontalScale,
+        y: .22 - (heartY - 5) / 34,
+      };
+    };
+    const pathSamples = Array.from({ length: 241 }, (_, index) => rawPointOnCurve(index / 240));
+    const pathLengths = pathSamples.reduce<number[]>((lengths, point, index) => {
+      if (index === 0) return [0];
+      const previous = pathSamples[index - 1];
+      lengths.push(lengths[index - 1] + Math.hypot((point.x - previous.x) * width, (point.y - previous.y) * height));
+      return lengths;
+    }, []);
+    const totalPathLength = pathLengths[pathLengths.length - 1];
+    const pointOnCurve = (progress: number) => {
+      const targetLength = progress * totalPathLength;
+      let sampleIndex = pathLengths.findIndex((length) => length >= targetLength);
+      if (sampleIndex === -1) sampleIndex = pathSamples.length - 1;
+      else if (sampleIndex < 1) sampleIndex = 1;
+      const previousLength = pathLengths[sampleIndex - 1];
+      const nextLength = pathLengths[sampleIndex];
+      const ratio = nextLength === previousLength ? 0 : (targetLength - previousLength) / (nextLength - previousLength);
+      const previous = pathSamples[sampleIndex - 1];
+      const next = pathSamples[sampleIndex];
+      return {
+        x: (previous.x + (next.x - previous.x) * ratio) * width,
+        y: (previous.y + (next.y - previous.y) * ratio) * height,
+      };
+    };
+    const animations = particles.map((particle, particleIndex) => {
+      const frames = Array.from({ length: 61 }, (_, frameIndex) => {
+        const progress = frameIndex / 60;
+        const pathProgress = Math.min(progress / .94, 1);
+        const { x, y } = pointOnCurve(pathProgress);
+        const fadeProgress = (1 - progress) / (1 - fadeStart);
+        const opacity = progress < .05 ? progress / .05 : progress > fadeStart ? Math.max(0, fadeProgress) * .92 : .92;
+        const scale = progress > fadeStart ? Math.max(.16, fadeProgress * .9) : .9;
+        return {
+          transform: `translate(${x}px, ${y}px) rotate(${progress * 180}deg) scale(${scale})`,
+          opacity,
+          filter: `blur(${progress > fadeStart ? (progress - fadeStart) * 18 : 0}px)`,
+        };
+      });
+      return particle.animate(frames, {
+        duration: 1850,
+        delay: particleIndex * 60,
+        easing: "linear",
+        fill: "forwards",
+      });
+    });
+
+    return () => animations.forEach((animation) => animation.cancel());
+  }, [heartBurst]);
 
   async function submitInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -147,11 +260,11 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="hero" id="top">
+      <section className="hero" id="top" onClick={() => setHeartBurst((value) => value + 1)}>
         <div className="heroArt" aria-hidden="true" />
-        <button className="heroHeartAction" type="button" aria-label="하트 효과 보기" title="하트를 눌러보세요" onClick={() => setHeartBurst((value) => value + 1)}>
-          {heartBurst > 0 && <span className="heartBurst" key={heartBurst} aria-hidden="true">{Array.from({ length: 10 }, (_, index) => <i key={index}>♥</i>)}</span>}
-        </button>
+        <div className="heroHeartAction" aria-hidden="true">
+          {heartBurst > 0 && <div className="heartOrbit" ref={heartOrbitRef} key={heartBurst}>{Array.from({ length: 17 }, (_, index) => <i key={index}>{index % 2 === 0 ? "♥" : "★"}</i>)}</div>}
+        </div>
         <div className="heroCopy" id="about">
           <p className="eyebrow">AI 콘텐츠 교육 &amp; 워크플로우 아키텍트</p>
           <h1>
@@ -159,11 +272,11 @@ export default function Home() {
             <span className="heroMiddle">콘텐츠를 성과로 만드는</span>
             <span className="lavender">생성형 AI 교육 전문가</span>
           </h1>
+          <div className="heroText heroLeadText"><p>생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 효율화, 바이브코딩까지 폭넓은 실무 교육을 진행합니다.</p></div>
         </div>
-        <div className="heroProfileBar">
-          <p className="heroRole">AI 콘텐츠 전문 강사 <span>·</span> 오 영 주</p>
-          <div className="heroText"><p>생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 효율화, 바이브코딩까지 폭넓은 실무 교육을 진행합니다.</p></div>
-          <p className="heroKeywords">콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</p>
+        <div className="heroProfileBar" onClick={(event) => event.stopPropagation()}>
+          <p className="heroRole">AI 콘텐츠 전문 강사 <span className="heroSeparator">·</span> <span className="heroPersonName heroPersonNameDesktop">오&nbsp;&nbsp;&nbsp;영&nbsp;&nbsp;&nbsp;주</span><span className="heroPersonName heroPersonNameMobile">오 영 주</span></p>
+          <a className="heroKeywords" href="#skills" onClick={(event) => event.stopPropagation()}>콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</a>
         </div>
       </section>
 
@@ -244,12 +357,14 @@ export default function Home() {
         <div className="videoWorks">
           <h3>AI 커머셜 · 숏폼 영상</h3>
           <div className="videoCarouselWrap">
-            <div className="videoWorksTrack">
+            <button className="worksArrow videoArrow worksArrowPrev" type="button" aria-label="이전 영상 보기" onClick={() => videoCarouselRef.current?.scrollBy({ left: -420, behavior: "smooth" })}>〈</button>
+            <div className="videoWorksTrack" ref={videoCarouselRef}>
               {videoWorks.map((work, index) => <article className={`videoWorkCard ${work.landscape ? "isLandscape" : ""}`} key={work.videoId}>
                 <iframe src={`https://www.youtube-nocookie.com/embed/${work.videoId}`} title={work.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
                 <p>AI VIDEO {String(index + 1).padStart(2, "0")}</p><h4>{work.title}</h4>
               </article>)}
             </div>
+            <button className="worksArrow videoArrow worksArrowNext" type="button" aria-label="다음 영상 보기" onClick={() => videoCarouselRef.current?.scrollBy({ left: 420, behavior: "smooth" })}>〉</button>
           </div>
         </div>
       </section>
@@ -257,14 +372,14 @@ export default function Home() {
       <section className="section reviewsSection" id="reviews">
         <header className="sectionHeader compact"><p>Section 07 · Reviews</p><h2>수강 <em>후기</em></h2><p className="sectionIntro">교육 현장에서 직접 경험한 수강생들의 이야기를 전합니다.</p></header>
         <div className="reviewsCarouselWrap">
-          <button className="reviewArrow reviewArrowPrev" type="button" aria-label="이전 수강 후기 보기" onClick={() => reviewsCarouselRef.current?.scrollBy({ left: -420, behavior: "smooth" })}>〈</button>
+          <button className="reviewArrow reviewArrowPrev" type="button" aria-label="이전 수강 후기 보기" onClick={() => scrollReviews(-1)}>〈</button>
           <div className="reviewList" ref={reviewsCarouselRef} tabIndex={0} aria-label="수강 후기 목록, 좌우로 스크롤할 수 있습니다">
-            {reviews.map(([quote, name, course, icon]) => <article className="reviewCard" key={name}>
+            {[...reviews, ...reviews].map(([quote, name, course, icon], index) => <article className="reviewCard" key={`${name}-${index}`} aria-hidden={index >= reviews.length}>
               <blockquote>“{quote}”</blockquote>
               <div className="reviewAuthor"><span aria-hidden="true">{icon}</span><p><span className="reviewNameRow"><strong>{name}</strong><span className="reviewStars" aria-label="별점 5점">★★★★★</span></span><small>{course}</small></p></div>
             </article>)}
           </div>
-          <button className="reviewArrow reviewArrowNext" type="button" aria-label="다음 수강 후기 보기" onClick={() => reviewsCarouselRef.current?.scrollBy({ left: 420, behavior: "smooth" })}>〉</button>
+          <button className="reviewArrow reviewArrowNext" type="button" aria-label="다음 수강 후기 보기" onClick={() => scrollReviews(1)}>〉</button>
         </div>
       </section>
 
