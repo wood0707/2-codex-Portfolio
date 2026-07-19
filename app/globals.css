@@ -134,7 +134,7 @@ footer { padding:36px 4.3vw; display:grid; grid-template-columns:1fr 1fr 1fr; al
 .topBrand { letter-spacing:.04em; }
 @media (max-width:560px) { .topBrand{letter-spacing:.02em} }
 .reviewsSection { background:#fff; }
-.reviewsCarouselWrap { position:relative; width:100%; max-width:1500px; margin:0 auto; }
+.reviewsCarouselWrap { position:relative; width:100%; max-width:1700px; margin:0 auto; }
 .reviewList { display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 32px)/3); gap:16px; width:100%; margin:0; overflow-x:auto; padding:8px 0 20px; scroll-snap-type:x mandatory; scrollbar-width:thin; scrollbar-color:#d8b9b2 transparent; }
 .reviewArrow { position:absolute; z-index:4; top:50%; width:46px; height:46px; display:grid; place-items:center; border:1px solid rgba(27,24,45,.12); border-radius:50%; background:rgba(255,255,255,.94); color:var(--ink); font-size:21px; cursor:pointer; transform:translateY(-50%); backdrop-filter:blur(6px); transition:background .2s ease,color .2s ease,transform .2s ease; }
 .reviewArrow:hover { background:var(--coral); color:#fff; transform:translateY(-50%) scale(1.06); }
