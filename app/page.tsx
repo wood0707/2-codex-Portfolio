@@ -32,15 +32,18 @@ const practicalTeachingExperiences = [
 ];
 
 const programs = [
-  ["PROGRAM 01", "AI 기반 업무 효율화", "문서 작성과 반복 업무를 간소화하고, AI 기반의 실무 프로세스를 구축하는 교육입니다."],
-  ["PROGRAM 02", "AI 콘텐츠 기획 및 제작", "생각을 이미지와 콘텐츠로 구체화하는 제작 교육입니다."],
-  ["PROGRAM 03", "AI 영상·숏폼 제작", "기획부터 이미지, 영상, 음성, 편집까지 완성하는 실습 교육입니다."],
-  ["PROGRAM 04", "AI 광고·브랜드 마케팅", "브랜드 홍보에 필요한 광고 콘텐츠와 시각 결과물을 제작합니다."],
+  ["PROGRAM 01", "AI 기반 업무 효율화", "구글 워크스페이스와 생성형 AI를 활용해 문서 작성과 반복 업무를 간소화하고, Gems 기반의 맞춤형 AI 비서와 챗봇을 구축하여 실무 프로세스의 효율을 높이는 교육입니다."],
+  ["PROGRAM 02", "AI 콘텐츠 기획 및 제작", "생성형 AI를 활용해 아이디어를 기획하고, 이미지·영상·디자인 콘텐츠로 구체화하는 실습 중심의 제작 교육입니다."],
+  ["PROGRAM 03", "AI 영상·숏폼 제작", "콘텐츠 기획부터 이미지 생성, 영상 제작, 음성·음악 활용, 편집까지 AI 영상 콘텐츠의 전 과정을 완성하는 실습 중심 교육입니다."],
+  ["PROGRAM 04", "AI 광고·브랜드 마케팅", "브랜드 정체성과 타깃을 분석하고, 홍보와 마케팅에 활용할 수 있는 광고 콘텐츠와 시각 결과물을 제작하는 교육입니다."],
 ];
 
+const brandWorkTitles = ["펀빌 · 퍼스널 브랜딩", "그로우로그 · 퍼스널 브랜딩", "오라트 · 퍼스널 브랜딩", "하리어스 · 퍼스널 브랜딩", "아임 프로 · 퍼스널 브랜딩", "그로우로그 · 퍼스널 브랜딩", "태권도 브랜드 아이덴티티", "디자인 프리즘 브랜드 아이덴티티", "루니브 · 퍼스널 브랜딩", "오픈지 · 퍼스널 브랜딩", "로그 포뮬러 · 퍼스널 브랜딩", "퍼럭스 · 퍼스널 브랜딩"];
+const visualWorkTitles = ["숏츠 스토리보드 01", "숏츠 스토리보드 02", "숏츠 씬 03", "숏츠 씬 04", "글로벌 필름 스카우트 보드게임 리디자인 01", "블루마블 보드게임 콘셉트 리디자인 02", "블루마블 보드게임 콘셉트 리디자인 03", "시네마 모굴 보드게임 리디자인 04"];
+
 const studentWorks = [
-  ...Array.from({ length: 12 }, (_, index) => ({ src: `/student-works/brand-${String(index + 1).padStart(2, "0")}${[0, 4, 5, 6].includes(index) ? ".jpg" : ".png"}`, category: "LOGO & BRANDING", title: `${[6, 7].includes(index) ? "아이덴티티 디자인 목업" : "로고디자인"} ${String(index + 1).padStart(2, "0")}` })),
-  ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `${index < 4 ? "숏츠 씬 구성" : "작품"} ${String(index + 1).padStart(2, "0")}` })),
+  ...brandWorkTitles.map((title, index) => ({ src: `/student-works/brand-${String(index + 1).padStart(2, "0")}${[0, 4, 5, 6].includes(index) ? ".jpg" : ".png"}`, category: "IDENTITY DESIGN", title })),
+  ...visualWorkTitles.map((title, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title })),
 ];
 
 const videoWorks = [
@@ -53,16 +56,18 @@ const videoWorks = [
     title: "남극 고대 괴물 미스터리",
   },
   {
-    videoId: "9JSiSvuYJ4w",
-    title: "K-뷰티 광고 · 공모전 출품작",
+    videoId: "NnirBh71wAc",
+    title: "vStory 숏폼 영상",
   },
   {
     videoId: "GKqY2yASrCo",
     title: "CU 편의점 광고 · 공모전 출품작",
+    landscape: true,
   },
   {
-    videoId: "NnirBh71wAc",
-    title: "vStory 숏폼 영상",
+    videoId: "9JSiSvuYJ4w",
+    title: "K-뷰티 광고 · 공모전 출품작",
+    landscape: true,
   },
 ];
 
@@ -83,6 +88,7 @@ export default function Home() {
   const [inquiryOpen, setInquiryOpen] = useState(false);
   const [heartBurst, setHeartBurst] = useState(0);
   const worksCarouselRef = useRef<HTMLDivElement>(null);
+  const reviewsCarouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .sectionHeader:not(.staticHeader), .programs .sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .reviewCard, .finalCtaInner");
@@ -155,7 +161,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="heroProfileBar">
-          <p className="heroRole">오 영 주 <span>·</span> AI 콘텐츠 전문 강사</p>
+          <p className="heroRole">AI 콘텐츠 전문 강사 <span>·</span> 오 영 주</p>
           <div className="heroText"><p>생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 효율화, 바이브코딩까지 폭넓은 실무 교육을 진행합니다.</p></div>
           <p className="heroKeywords">콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</p>
         </div>
@@ -205,23 +211,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section programs" id="programs">
+        <header className="sectionHeader compact staticHeader"><p>Section 04 · Programs</p><h2><span>핵심 프로그램</span> <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
+        <div className="programGrid">
+          {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{["✦", "◌", "↗", "◎"][index]}</div><h3>{title}</h3><p>{desc}</p></article>)}
+        </div>
+      </section>
+
       <section className="section booksSection" id="books">
-        <header className="sectionHeader compact"><p>Section 04 · Books</p><h2>출간 <em>저서</em></h2><p className="sectionIntro">생성형 AI 활용 경험과 실무 노하우를 책으로 전합니다.</p></header>
+        <header className="sectionHeader compact"><p>Section 05 · Books</p><h2>출간 <em>저서</em></h2><p className="sectionIntro">생성형 AI 활용 경험과 실무 노하우를 책으로 전합니다.</p></header>
         <div className="bookGrid">
           <article><div className="bookCover"><img src="/books/ai-automation.jpg" alt="한 권으로 끝내는 AI 자동화 책 표지" /></div><div className="bookInfo"><span>BOOK 01</span><h3>『한 권으로 끝내는 AI 자동화』</h3><p>공저 · 주간 베스트셀러 선정</p></div></article>
           <article><div className="bookCover"><img src="/books/ai-advertising.png" alt="AI 광고 제작의 모든 것 전자책 표지" /></div><div className="bookInfo"><span>BOOK 02</span><h3>『AI 광고 제작의 모든 것』</h3><p>전자책 공저</p></div></article>
         </div>
       </section>
 
-      <section className="section programs" id="programs">
-        <header className="sectionHeader compact staticHeader"><p>Section 05 · Programs</p><h2><span>핵심 프로그램</span> <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
-        <div className="programGrid">
-          {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{["✦", "◌", "↗", "◎"][index]}</div><h3>{title}</h3><p>{desc}</p></article>)}
-        </div>
-      </section>
-
       <section className="section works" id="works">
         <header className="sectionHeader compact"><p>Section 06 · Student Works</p><h2>수강생 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
+        <h3 className="worksSubheading">AI 비주얼 · 아이덴티티 디자인</h3>
         <div className="worksCarouselWrap">
           <button className="worksArrow worksArrowPrev" type="button" aria-label="이전 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: -390, behavior: "smooth" })}>〈</button>
           <div className="worksCarousel" ref={worksCarouselRef} aria-label="수강생 작품 자동 갤러리">
@@ -237,9 +244,9 @@ export default function Home() {
         <div className="videoWorks">
           <h3>AI 커머셜 · 숏폼 영상</h3>
           <div className="videoWorksTrack">
-            {videoWorks.map((work) => <article className="videoWorkCard" key={work.videoId}>
+            {videoWorks.map((work, index) => <article className={`videoWorkCard ${work.landscape ? "isLandscape" : ""}`} key={work.videoId}>
               <iframe src={`https://www.youtube-nocookie.com/embed/${work.videoId}`} title={work.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
-              <p>AI VIDEO</p><h4>{work.title}</h4>
+              <p>AI VIDEO {String(index + 1).padStart(2, "0")}</p><h4>{work.title}</h4>
             </article>)}
           </div>
         </div>
@@ -247,11 +254,15 @@ export default function Home() {
 
       <section className="section reviewsSection" id="reviews">
         <header className="sectionHeader compact"><p>Section 07 · Reviews</p><h2>수강 <em>후기</em></h2><p className="sectionIntro">교육 현장에서 직접 경험한 수강생들의 이야기를 전합니다.</p></header>
-        <div className="reviewList" tabIndex={0} aria-label="수강 후기 목록, 좌우로 스크롤할 수 있습니다">
-          {reviews.map(([quote, name, course, icon]) => <article className="reviewCard" key={name}>
-            <blockquote>“{quote}”</blockquote>
-            <div className="reviewAuthor"><span aria-hidden="true">{icon}</span><p><span className="reviewNameRow"><strong>{name}</strong><span className="reviewStars" aria-label="별점 5점">★★★★★</span></span><small>{course}</small></p></div>
-          </article>)}
+        <div className="reviewsCarouselWrap">
+          <button className="reviewArrow reviewArrowPrev" type="button" aria-label="이전 수강 후기 보기" onClick={() => reviewsCarouselRef.current?.scrollBy({ left: -420, behavior: "smooth" })}>〈</button>
+          <div className="reviewList" ref={reviewsCarouselRef} tabIndex={0} aria-label="수강 후기 목록, 좌우로 스크롤할 수 있습니다">
+            {reviews.map(([quote, name, course, icon]) => <article className="reviewCard" key={name}>
+              <blockquote>“{quote}”</blockquote>
+              <div className="reviewAuthor"><span aria-hidden="true">{icon}</span><p><span className="reviewNameRow"><strong>{name}</strong><span className="reviewStars" aria-label="별점 5점">★★★★★</span></span><small>{course}</small></p></div>
+            </article>)}
+          </div>
+          <button className="reviewArrow reviewArrowNext" type="button" aria-label="다음 수강 후기 보기" onClick={() => reviewsCarouselRef.current?.scrollBy({ left: 420, behavior: "smooth" })}>〉</button>
         </div>
       </section>
 
