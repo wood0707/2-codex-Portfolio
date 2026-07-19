@@ -46,7 +46,7 @@ const studentWorks = [
 const videoWorks = [
   {
     videoId: "_dT7t16rNvI",
-    title: "공익광고",
+    title: "AI 공익광고",
   },
   {
     videoId: "dFDLk6KUbqk",
