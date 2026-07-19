@@ -43,10 +43,12 @@ const studentWorks = [
   ...Array.from({ length: 8 }, (_, index) => ({ src: `/student-works/visual-${String(index + 1).padStart(2, "0")}${index === 1 ? ".png" : ".jpg"}`, category: "AI VISUAL", title: `${index < 4 ? "숏폼 씬 구성" : "작품"} ${String(index + 1).padStart(2, "0")}` })),
 ];
 
-const videoWorks = [1, 2, 3, 6].map((number) => ({
-  src: `/student-videos/video-${String(number).padStart(2, "0")}.mp4`,
-  title: `AI 커머셜 · 숏폼 영상 ${String(number).padStart(2, "0")}`,
-}));
+const videoWorks = [
+  {
+    videoId: "_dT7t16rNvI",
+    title: "AI 커머셜 · 숏폼 영상 01",
+  },
+];
 
 const reviews = [
   ["ChatGPT와 Vrew를 처음 배웠는데 이렇게 쉬울 줄 몰랐어요. 4주 후엔 완성도 높은 영상을 혼자 만들 수 있게 됐습니다.", "이○○님", "프리랜서 · 기초 과정 수강", "☺"],
@@ -220,8 +222,8 @@ export default function Home() {
         <div className="videoWorks">
           <h3>AI 커머셜 · 숏폼 영상</h3>
           <div className="videoWorksTrack">
-            {videoWorks.map((work) => <article className="videoWorkCard" key={work.src}>
-              <video src={work.src} controls preload="metadata" playsInline aria-label={work.title} />
+            {videoWorks.map((work) => <article className="videoWorkCard" key={work.videoId}>
+              <iframe src={`https://www.youtube-nocookie.com/embed/${work.videoId}`} title={work.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
               <p>AI VIDEO</p><h4>{work.title}</h4>
             </article>)}
           </div>
