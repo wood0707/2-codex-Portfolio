@@ -122,7 +122,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setHeartBurst((value) => value + 1), 100);
+    const timer = window.setTimeout(() => setHeartBurst((value) => value + 1), 300);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -263,7 +263,7 @@ export default function Home() {
       <section className="hero" id="top" onClick={() => setHeartBurst((value) => value + 1)}>
         <div className="heroArt" aria-hidden="true" />
         <div className="heroHeartAction" aria-hidden="true">
-          {heartBurst > 0 && <div className="heartOrbit" ref={heartOrbitRef} key={heartBurst}>{Array.from({ length: 17 }, (_, index) => <i key={index}>{index % 2 === 0 ? "♥" : "★"}</i>)}</div>}
+          {heartBurst > 0 && <div className="heartOrbit" ref={heartOrbitRef} key={heartBurst}>{Array.from({ length: 19 }, (_, index) => <i key={index}>{index % 2 === 0 ? "♥" : "★"}</i>)}</div>}
         </div>
         <div className="heroCopy" id="about">
           <p className="eyebrow">AI 콘텐츠 교육 &amp; 워크플로우 아키텍트</p>
