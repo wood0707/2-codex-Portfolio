@@ -226,7 +226,7 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
 .videoWorks>h3 { margin:0 0 24px; font-size:22px; font-weight:700; }
 
 .worksSubheading,
-.videoWorks>h3 { color:#efad72; }
+.videoWorks>h3 { color:#ff9f43; }
 .subheadingDot { display:inline-block; margin-right:4px; font-size:1.15em; line-height:1; }
 .videoCarouselWrap { position:relative; }
 .videoCarouselWrap .videoArrow { top:42%; display:grid; }
