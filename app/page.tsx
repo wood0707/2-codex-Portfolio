@@ -211,8 +211,8 @@ export default function Home() {
         };
       });
       return particle.animate(frames, {
-        duration: 1850,
-        delay: particleIndex * 60,
+        duration: 2600,
+        delay: particleIndex * 85,
         easing: "linear",
         fill: "forwards",
       });
@@ -344,7 +344,7 @@ export default function Home() {
         <h3 className="worksSubheading">AI 비주얼 · 아이덴티티 디자인</h3>
         <div className="worksCarouselWrap">
           <button className="worksArrow worksArrowPrev" type="button" aria-label="이전 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: -390, behavior: "smooth" })}>〈</button>
-          <div className="worksCarousel" ref={worksCarouselRef} aria-label="수강생 작품 자동 갤러리">
+          <div className="worksCarousel" ref={worksCarouselRef} aria-label="참여자 작품 자동 갤러리">
             <div className="worksTrack">
               {[...studentWorks, ...studentWorks].map((work, index) => <article className="workCard" key={`${work.src}-${index}`} aria-hidden={index >= studentWorks.length}>
                 <div className="workImage"><img src={work.src} alt={index < studentWorks.length ? work.title : ""} loading="lazy" /></div>
