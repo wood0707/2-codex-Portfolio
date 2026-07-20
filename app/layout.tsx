@@ -48,12 +48,14 @@ export const metadata: Metadata = {
     siteName: "오영주 AI 콘텐츠 포트폴리오",
     type: "website",
     locale: "ko_KR",
+    images: [{ url: "/og.png", width: 1425, height: 652, alt: "오영주 생성형 AI 교육 전문가 포트폴리오" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "오영주 | AI 콘텐츠 전문 강사",
     description:
       "생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 효율화, 바이브코딩까지 폭넓은 실무 교육을 진행합니다.",
+    images: ["/og.png"],
   },
   category: "education",
 };
