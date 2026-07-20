@@ -302,7 +302,7 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
   .programIcon{position:relative;left:auto;top:auto;margin:21px 0 26px;font-size:35px}
   .programCard h3{margin:0 0 10px;font-size:15px}
   .programCard p{font-size:11px}
-  .worksSubheading,.videoWorks>h3{color:#df873c;font-size:14px;letter-spacing:-.04em}
+  .worksSubheading,.videoWorks>h3{color:#ff9f43;font-size:14px;letter-spacing:-.04em}
   .worksSubheading::before,.videoWorks>h3::before{content:".";display:inline-block;margin-right:6px;color:inherit;font-size:1.25em;font-weight:900;line-height:0}
   .workCard>h3,.videoWorkCard h4{font-size:14px}
   .reviewsCarouselWrap{overflow:visible}
