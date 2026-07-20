@@ -341,7 +341,7 @@ export default function Home() {
 
       <section className="section works" id="works">
         <header className="sectionHeader compact"><p>Section 06 · Participant Works</p><h2>참여자 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
-        <h3 className="worksSubheading">AI 비주얼 · 아이덴티티 디자인</h3>
+        <h3 className="worksSubheading">. AI 비주얼 · 아이덴티티 디자인</h3>
         <div className="worksCarouselWrap">
           <button className="worksArrow worksArrowPrev" type="button" aria-label="이전 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: -390, behavior: "smooth" })}>〈</button>
           <div className="worksCarousel" ref={worksCarouselRef} aria-label="참여자 작품 자동 갤러리">
@@ -355,7 +355,7 @@ export default function Home() {
           <button className="worksArrow worksArrowNext" type="button" aria-label="다음 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: 390, behavior: "smooth" })}>〉</button>
         </div>
         <div className="videoWorks">
-          <h3>AI 커머셜 · 숏폼 영상</h3>
+          <h3>. AI 커머셜 · 숏폼 영상</h3>
           <div className="videoCarouselWrap">
             <button className="worksArrow videoArrow worksArrowPrev" type="button" aria-label="이전 영상 보기" onClick={() => videoCarouselRef.current?.scrollBy({ left: -420, behavior: "smooth" })}>〈</button>
             <div className="videoWorksTrack" ref={videoCarouselRef}>
