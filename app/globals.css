@@ -117,7 +117,7 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
 .workImage img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .45s ease; }
 .workCard:hover .workImage img { transform:scale(1.035); }
 .workCard>p { margin:16px 0 7px; color:var(--coral); font-family:"Gmarket Sans","Noto Sans KR",sans-serif; font-size:11px; font-weight:700; letter-spacing:.12em; }
-.workCard>h3 { margin:0; font-size:18px; line-height:1.45; }
+.workCard>h3 { margin:0; font-size:17px; line-height:1.45; }
 @keyframes worksMarquee { from{transform:translateX(0)} to{transform:translateX(calc(-50% - 11px))} }
 @media (max-width:560px) { .worksSubheading{margin-bottom:18px;font-size:19px}.worksCarousel{margin:0}.worksTrack{gap:14px;animation-duration:58s}.workCard{width:76vw}.workCard>h3{font-size:16px}@keyframes worksMarquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}} }
 @media (prefers-reduced-motion:reduce) { .worksTrack{animation:none;overflow-x:auto}.workImage img{transition:none} }
@@ -308,7 +308,8 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
   .programCard p{font-size:11px}
   .worksSubheading,.videoWorks>h3{color:#ff9f43;font-size:14px;letter-spacing:-.04em}
   .worksSubheading .subheadingDot,.videoWorks>h3 .subheadingDot{color:currentColor}
-  .workCard>h3,.videoWorkCard h4{font-size:14px}
+  .workCard>h3{font-size:13px}
+  .videoWorkCard h4{font-size:14px}
   .reviewsCarouselWrap{overflow:visible}
   .reviewList{display:grid;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory}
   .reviewCard{min-height:300px;padding:52px 18px 22px;scroll-snap-align:start}
