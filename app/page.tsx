@@ -260,8 +260,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="hero heroImageOnly" id="top" onClick={() => setHeartBurst((value) => value + 1)}>
-        <img className="heroBannerImage" src="/og-hero-v2.png" alt="생각을 콘텐츠로, 콘텐츠를 성과로 만드는 생성형 AI 교육 전문가" />
+      <section className="hero" id="top" onClick={() => setHeartBurst((value) => value + 1)}>
         <div className="heroArt" aria-hidden="true" />
         <div className="heroHeartAction" aria-hidden="true">
           {heartBurst > 0 && <div className="heartOrbit" ref={heartOrbitRef} key={heartBurst}>{Array.from({ length: 19 }, (_, index) => <i key={index}>{index % 2 === 0 ? "♥" : "★"}</i>)}</div>}
