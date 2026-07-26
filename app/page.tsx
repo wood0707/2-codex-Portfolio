@@ -201,15 +201,15 @@ export default function Home() {
         </div>
         <div className="heroProfileBar" onClick={(event) => event.stopPropagation()}>
           <p className="heroRole">AI 콘텐츠 전문 강사 <span className="heroSeparator">·</span> <span className="heroPersonName heroPersonNameDesktop">오&nbsp;&nbsp;&nbsp;영&nbsp;&nbsp;&nbsp;주</span><span className="heroPersonName heroPersonNameMobile">오 영 주</span></p>
-          <div className="heroKeywords" onClick={(event) => event.stopPropagation()} onMouseLeave={() => setActiveSkill(null)}>
-            <a href="#skill-content" onMouseEnter={() => setActiveSkill(0)} onFocus={() => setActiveSkill(0)}>콘텐츠 기획</a>
-            <span>/</span>
-            <a href="#skill-automation" onMouseEnter={() => setActiveSkill(4)} onFocus={() => setActiveSkill(4)}>업무 자동화</a>
-            <span>/</span>
-            <a href="#skill-video" onMouseEnter={() => setActiveSkill(2)} onFocus={() => setActiveSkill(2)}>AI 영상</a>
-            <span>/</span>
-            <a href="#skill-branding" onMouseEnter={() => setActiveSkill(1)} onFocus={() => setActiveSkill(1)}>퍼스널 브랜딩</a>
-          </div>
+          <nav className="heroKeywords" aria-label="주요 교육 분야" onClick={(event) => event.stopPropagation()} onMouseLeave={() => setActiveSkill(null)}>
+            <a href="#skill-content" onMouseEnter={() => setActiveSkill(0)} onFocus={() => setActiveSkill(0)} onBlur={() => setActiveSkill(null)}>콘텐츠 기획</a>
+            <span aria-hidden="true">/</span>
+            <a href="#skill-automation" onMouseEnter={() => setActiveSkill(4)} onFocus={() => setActiveSkill(4)} onBlur={() => setActiveSkill(null)}>업무 자동화</a>
+            <span aria-hidden="true">/</span>
+            <a href="#skill-video" onMouseEnter={() => setActiveSkill(2)} onFocus={() => setActiveSkill(2)} onBlur={() => setActiveSkill(null)}>AI 영상</a>
+            <span aria-hidden="true">/</span>
+            <a href="#skill-branding" onMouseEnter={() => setActiveSkill(1)} onFocus={() => setActiveSkill(1)} onBlur={() => setActiveSkill(null)}>퍼스널 브랜딩</a>
+          </nav>
         </div>
       </section>
 

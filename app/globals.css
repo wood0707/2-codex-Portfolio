@@ -137,17 +137,17 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
 .heroLeadText p { width:111.111%; transform:scaleX(.9); transform-origin:left center; }
 .heroKeywords { margin-top:16px; font-size:18px; font-weight:500; }
 @media (max-width:560px) { .heroCopy .eyebrow{font-size:13px}.heroRole{margin:48px 0 13px;font-size:18px}.heroText{font-size:15px}.heroLeadText{font-size:14px}.heroKeywords{margin-top:14px;font-size:15px} }
-.heroProfileBar { position:absolute; z-index:2; left:0; right:0; bottom:0; display:grid; grid-template-columns:minmax(330px,.9fr) minmax(420px,1.55fr) minmax(390px,1.25fr); align-items:center; gap:34px; margin:0; padding:26px var(--page-gutter) 28px; border:0; background:rgba(255,255,255,.4); backdrop-filter:blur(8px); }
+.heroProfileBar { position:absolute; z-index:2; left:0; right:0; bottom:0; display:grid; grid-template-columns:minmax(390px,auto) minmax(520px,1fr); align-items:center; gap:42px; margin:0; padding:26px var(--page-gutter) 28px; border:0; background:rgba(255,255,255,.52); backdrop-filter:blur(10px); }
 .heroProfileBar .heroRole,.heroProfileBar .heroText,.heroProfileBar .heroKeywords { margin:0; padding-left:0; }
-.heroProfileBar .heroRole { font-size:23px; font-weight:500; text-shadow:.18px 0 currentColor,-.18px 0 currentColor; white-space:nowrap; }
+.heroProfileBar .heroRole { font-size:23px; font-weight:500; line-height:1.45; text-shadow:.18px 0 currentColor,-.18px 0 currentColor; white-space:nowrap; }
 .heroProfileBar .heroRole .heroPersonName { margin:0; color:inherit; }
 .heroPersonNameMobile { display:none; }
 .heroProfileBar .heroText { max-width:none; font-size:15px; line-height:1.75; transform:translateX(20px); }
 .heroProfileBar .heroText p { width:111.111%; transform:scaleX(.9); transform-origin:left center; }
-.heroProfileBar .heroKeywords { grid-column:3; justify-self:end; color:var(--ink); font-size:17px; font-weight:500; line-height:1.7; text-shadow:.18px 0 currentColor,-.18px 0 currentColor; }
-.heroProfileBar .heroKeywords span { margin:0 5px; }
-.heroProfileBar .heroKeywords a{color:inherit;text-decoration:none;transition:color .2s ease,background-color .2s ease}.heroProfileBar .heroKeywords a:hover,.heroProfileBar .heroKeywords a:focus-visible{color:#a85048;background:rgba(255,255,255,.52);outline:none}
-@media (max-width:1100px) { .heroProfileBar{grid-template-columns:minmax(280px,.8fr) minmax(0,1.5fr)}.heroProfileBar .heroKeywords{grid-column:2;justify-self:end} }
+.heroProfileBar .heroKeywords { grid-column:2; display:flex; align-items:center; justify-content:flex-end; justify-self:stretch; gap:0; color:var(--ink); font-size:17px; font-weight:500; line-height:1.7; text-shadow:.18px 0 currentColor,-.18px 0 currentColor; white-space:nowrap; }
+.heroProfileBar .heroKeywords span { margin:0 7px; color:var(--coral); }
+.heroProfileBar .heroKeywords a{padding:7px 10px;color:inherit;text-decoration:none;border-radius:999px;transition:color .2s ease,background-color .2s ease,transform .2s ease}.heroProfileBar .heroKeywords a:hover,.heroProfileBar .heroKeywords a:focus-visible{color:#8f453f;background:#fff4ef;outline:none;transform:translateY(-2px)}
+@media (max-width:1100px) { .heroProfileBar{grid-template-columns:1fr;gap:12px}.heroProfileBar .heroKeywords{grid-column:1;justify-content:flex-start;justify-self:start}.heroProfileBar .heroRole{white-space:normal} }
 @media (max-width:560px) { .heroProfileBar{grid-template-columns:1fr;gap:12px;padding:22px}.heroProfileBar .heroRole{font-size:19px;white-space:normal}.heroProfileBar .heroText{font-size:14px}.heroProfileBar .heroKeywords{grid-column:auto;font-size:16px} }
 .topBrand { letter-spacing:.04em; }
 @media (max-width:560px) { .topBrand{letter-spacing:.02em} }
@@ -264,8 +264,9 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
   .heroPersonNameDesktop{display:none}
   .heroProfileBar .heroRole .heroPersonNameMobile{display:block;margin-top:5px;color:var(--ink);font-size:17px;font-weight:700;letter-spacing:.035em;word-spacing:.16em}
   .heroProfileBar .heroText{font-size:12px;line-height:1.65}
-  .heroProfileBar .heroKeywords{display:none}
-  .heroProfileBar .heroKeywords span{margin:0}
+  .heroProfileBar .heroKeywords{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;width:100%;margin-top:10px;white-space:normal}
+  .heroProfileBar .heroKeywords a{padding:8px 9px;background:rgba(255,255,255,.58);border:1px solid rgba(226,169,151,.38);border-radius:8px;text-align:center;font-size:11px;line-height:1.35}
+  .heroProfileBar .heroKeywords span{display:none}
 
   .section{padding:45px 18px}
   .sectionHeader{margin-bottom:28px}
