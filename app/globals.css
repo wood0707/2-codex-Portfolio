@@ -265,12 +265,12 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
   h1{margin:10px 0 13px;font-size:clamp(17px,5.1vw,20px);line-height:1.2}
   .heroLeadText{display:block;max-width:95%;font-size:7px;line-height:1.55}
   .heroProfileBar{position:absolute;inset:auto 0 0;display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;gap:8px;margin:0;padding:11px 14px;background:rgba(255,255,255,.35);backdrop-filter:blur(8px)}
-  .heroProfileBar .heroRole{position:absolute;left:14px;bottom:calc(100% + 6px);color:var(--ink);font-size:8px;font-weight:600;line-height:1.45;letter-spacing:-.05em;text-shadow:none;white-space:nowrap;transform:scaleX(.85);transform-origin:left center}
+  .heroProfileBar .heroRole{position:absolute;left:14px;bottom:calc(100% + 6px);color:var(--ink);font-size:10px;font-weight:600;line-height:1.45;letter-spacing:-.05em;text-shadow:none;white-space:nowrap;transform:scaleX(.85);transform-origin:left center}
   .heroProfileBar .heroRole .heroSeparator{display:inline}
   .heroPersonNameDesktop{display:inline}
   .heroProfileBar .heroRole .heroPersonNameMobile{display:none}
   .heroProfileBar .heroText{font-size:8px;line-height:1.5}
-  .heroProfileBar .heroKeywords{grid-column:2;display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:0;width:100%;margin-top:0;white-space:nowrap;transform:scaleX(.85);transform-origin:right center}
+  .heroProfileBar .heroKeywords{grid-column:1/-1;display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:0;width:100%;margin-top:0;white-space:nowrap;transform:scaleX(.85);transform-origin:left center}
   .heroProfileBar .heroKeywords .heroKeywordItem{display:inline;padding:0 1px;background:none;border:0;border-radius:0;text-align:left;font-size:3px;line-height:1.45;letter-spacing:-.05em}
   .heroProfileBar .heroKeywords > span[aria-hidden]{display:inline;margin:0 1px;color:var(--coral);font-size:3px}
 
