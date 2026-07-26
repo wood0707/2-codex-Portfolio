@@ -86,12 +86,11 @@ export default function Home() {
   const [submitError, setSubmitError] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [inquiryOpen, setInquiryOpen] = useState(false);
-  const [heartBurst, setHeartBurst] = useState(0);
+  const [activeSkill, setActiveSkill] = useState<number | null>(null);
   const worksCarouselRef = useRef<HTMLDivElement>(null);
   const videoCarouselRef = useRef<HTMLDivElement>(null);
   const reviewsCarouselRef = useRef<HTMLDivElement>(null);
   const reviewIndexRef = useRef(0);
-  const heartOrbitRef = useRef<HTMLDivElement>(null);
 
   const scrollReviews = (direction: 1 | -1) => {
     const carousel = reviewsCarouselRef.current;
@@ -122,11 +121,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setHeartBurst((value) => value + 1), 300);
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>(".aboutHeader, .aboutText, .sectionHeader:not(.staticHeader), .programs .sectionHeader, .skillCard, .experienceGroup, .credentialBlock, .bookGrid article, .programCard, .workGrid article, .reviewCard, .finalCtaInner");
     items.forEach((item, index) => {
       item.classList.add("revealItem");
@@ -154,72 +148,6 @@ export default function Home() {
       window.clearInterval(timer);
     };
   }, []);
-
-  useEffect(() => {
-    const orbit = heartOrbitRef.current;
-    if (!orbit || heartBurst === 0) return;
-
-    const { width, height } = orbit.getBoundingClientRect();
-    const isMobileOrbit = window.matchMedia("(max-width: 560px)").matches;
-    const fadeStart = isMobileOrbit ? .8 : .94;
-    const particles = Array.from(orbit.querySelectorAll<HTMLElement>("i"));
-    const rawPointOnCurve = (progress: number) => {
-      const angle = progress * Math.PI * 2;
-      const heartX = 16 * Math.sin(angle) ** 3;
-      const heartY = 13 * Math.cos(angle) - 5 * Math.cos(2 * angle) - 2 * Math.cos(3 * angle) - Math.cos(4 * angle);
-      const horizontalScale = heartX >= 0 ? .38 : .3;
-      return {
-        x: .43 + (heartX / 16) * horizontalScale,
-        y: .22 - (heartY - 5) / 34,
-      };
-    };
-    const pathSamples = Array.from({ length: 241 }, (_, index) => rawPointOnCurve(index / 240));
-    const pathLengths = pathSamples.reduce<number[]>((lengths, point, index) => {
-      if (index === 0) return [0];
-      const previous = pathSamples[index - 1];
-      lengths.push(lengths[index - 1] + Math.hypot((point.x - previous.x) * width, (point.y - previous.y) * height));
-      return lengths;
-    }, []);
-    const totalPathLength = pathLengths[pathLengths.length - 1];
-    const pointOnCurve = (progress: number) => {
-      const targetLength = progress * totalPathLength;
-      let sampleIndex = pathLengths.findIndex((length) => length >= targetLength);
-      if (sampleIndex === -1) sampleIndex = pathSamples.length - 1;
-      else if (sampleIndex < 1) sampleIndex = 1;
-      const previousLength = pathLengths[sampleIndex - 1];
-      const nextLength = pathLengths[sampleIndex];
-      const ratio = nextLength === previousLength ? 0 : (targetLength - previousLength) / (nextLength - previousLength);
-      const previous = pathSamples[sampleIndex - 1];
-      const next = pathSamples[sampleIndex];
-      return {
-        x: (previous.x + (next.x - previous.x) * ratio) * width,
-        y: (previous.y + (next.y - previous.y) * ratio) * height,
-      };
-    };
-    const animations = particles.map((particle, particleIndex) => {
-      const frames = Array.from({ length: 61 }, (_, frameIndex) => {
-        const progress = frameIndex / 60;
-        const pathProgress = Math.min(progress / .94, 1);
-        const { x, y } = pointOnCurve(pathProgress);
-        const fadeProgress = (1 - progress) / (1 - fadeStart);
-        const opacity = progress < .05 ? progress / .05 : progress > fadeStart ? Math.max(0, fadeProgress) * .92 : .92;
-        const scale = progress > fadeStart ? Math.max(.16, fadeProgress * .9) : .9;
-        return {
-          transform: `translate(${x}px, ${y}px) rotate(${progress * 180}deg) scale(${scale})`,
-          opacity,
-          filter: `blur(${progress > fadeStart ? (progress - fadeStart) * 18 : 0}px)`,
-        };
-      });
-      return particle.animate(frames, {
-        duration: 2600,
-        delay: particleIndex * 85,
-        easing: "linear",
-        fill: "forwards",
-      });
-    });
-
-    return () => animations.forEach((animation) => animation.cancel());
-  }, [heartBurst]);
 
   async function submitInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -260,11 +188,8 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="hero" id="top" onClick={() => setHeartBurst((value) => value + 1)}>
+      <section className="hero" id="top">
         <div className="heroArt" aria-hidden="true" />
-        <div className="heroHeartAction" aria-hidden="true">
-          {heartBurst > 0 && <div className="heartOrbit" ref={heartOrbitRef} key={heartBurst}>{Array.from({ length: 19 }, (_, index) => <i key={index}>{index % 2 === 0 ? "♥" : "★"}</i>)}</div>}
-        </div>
         <div className="heroCopy" id="about">
           <p className="eyebrow">AI 콘텐츠 교육 &amp; 워크플로우 아키텍트</p>
           <h1>
@@ -276,7 +201,15 @@ export default function Home() {
         </div>
         <div className="heroProfileBar" onClick={(event) => event.stopPropagation()}>
           <p className="heroRole">AI 콘텐츠 전문 강사 <span className="heroSeparator">·</span> <span className="heroPersonName heroPersonNameDesktop">오&nbsp;&nbsp;&nbsp;영&nbsp;&nbsp;&nbsp;주</span><span className="heroPersonName heroPersonNameMobile">오 영 주</span></p>
-          <a className="heroKeywords" href="#skills" onClick={(event) => event.stopPropagation()}>콘텐츠 기획 <span>/</span> 업무 자동화 <span>/</span> AI 영상 <span>/</span> 퍼스널 브랜딩</a>
+          <div className="heroKeywords" onClick={(event) => event.stopPropagation()} onMouseLeave={() => setActiveSkill(null)}>
+            <a href="#skill-content" onMouseEnter={() => setActiveSkill(0)} onFocus={() => setActiveSkill(0)}>콘텐츠 기획</a>
+            <span>/</span>
+            <a href="#skill-automation" onMouseEnter={() => setActiveSkill(4)} onFocus={() => setActiveSkill(4)}>업무 자동화</a>
+            <span>/</span>
+            <a href="#skill-video" onMouseEnter={() => setActiveSkill(2)} onFocus={() => setActiveSkill(2)}>AI 영상</a>
+            <span>/</span>
+            <a href="#skill-branding" onMouseEnter={() => setActiveSkill(1)} onFocus={() => setActiveSkill(1)}>퍼스널 브랜딩</a>
+          </div>
         </div>
       </section>
 
@@ -286,8 +219,12 @@ export default function Home() {
           <h2>핵심 역량 및 <em>교육 분야</em></h2>
         </header>
         <div className="skillGrid">
-          {skills.map((skill) => (
-            <article className="skillCard" key={skill}><span aria-hidden="true" /><h3>{skill}</h3></article>
+          {skills.map((skill, index) => (
+            <article
+              id={index === 0 ? "skill-content" : index === 1 ? "skill-branding" : index === 2 ? "skill-video" : index === 4 ? "skill-automation" : undefined}
+              className={`skillCard ${activeSkill === index ? "isKeywordActive" : ""}`}
+              key={skill}
+            ><span aria-hidden="true" /><h3>{skill}</h3></article>
           ))}
         </div>
       </section>
