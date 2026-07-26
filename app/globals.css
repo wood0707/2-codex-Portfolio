@@ -258,21 +258,21 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
   body{width:100%;zoom:1}
   .topBrand{letter-spacing:-.05em;transform:scaleX(.9);transform-origin:left center}
   .hero{display:block;min-height:clamp(255px,71vw,278px);padding:0 14px}
-  .heroArt{top:0;bottom:0;height:auto;background-position:right -38px top 34px;background-size:auto clamp(200px,58vw,226px);opacity:.82}
+  .heroArt{top:0;bottom:0;height:auto;background-position:right -38px top 24px;background-size:auto clamp(200px,58vw,226px);opacity:.82}
   .heroShapes{-webkit-mask-image:radial-gradient(ellipse 13% 18% at 8% 15%,#000 52%,transparent 76%),radial-gradient(ellipse 13% 20% at 86% 83%,#000 53%,transparent 77%);mask-image:radial-gradient(ellipse 13% 18% at 8% 15%,#000 52%,transparent 76%),radial-gradient(ellipse 13% 20% at 86% 83%,#000 53%,transparent 77%)}
   .heroCopy{max-width:62%;padding:35px 0 70px}
   .heroCopy .eyebrow{margin-left:0;font-size:7px;line-height:1.45;letter-spacing:.05em}
   h1{margin:10px 0 13px;font-size:clamp(17px,5.1vw,20px);line-height:1.2}
   .heroLeadText{display:block;max-width:95%;font-size:7px;line-height:1.55}
   .heroProfileBar{position:absolute;inset:auto 0 0;display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;gap:8px;margin:0;padding:11px 14px;background:rgba(255,255,255,.35);backdrop-filter:blur(8px)}
-  .heroProfileBar .heroRole{color:var(--ink);font-size:8px;font-weight:600;line-height:1.45;letter-spacing:-.02em;text-shadow:none;white-space:nowrap}
+  .heroProfileBar .heroRole{color:var(--ink);font-size:8px;font-weight:600;line-height:1.45;letter-spacing:-.05em;text-shadow:none;white-space:nowrap;transform:scaleX(.85);transform-origin:left center}
   .heroProfileBar .heroRole .heroSeparator{display:inline}
   .heroPersonNameDesktop{display:inline}
   .heroProfileBar .heroRole .heroPersonNameMobile{display:none}
   .heroProfileBar .heroText{font-size:8px;line-height:1.5}
   .heroProfileBar .heroKeywords{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:0;width:100%;margin-top:0;white-space:nowrap;transform:scaleX(.85);transform-origin:right center}
-  .heroProfileBar .heroKeywords .heroKeywordItem{display:inline;padding:0 1px;background:none;border:0;border-radius:0;text-align:left;font-size:5px;line-height:1.45;letter-spacing:-.05em}
-  .heroProfileBar .heroKeywords > span[aria-hidden]{display:inline;margin:0 1px;color:var(--coral);font-size:5px}
+  .heroProfileBar .heroKeywords .heroKeywordItem{display:inline;padding:0 1px;background:none;border:0;border-radius:0;text-align:left;font-size:3px;line-height:1.45;letter-spacing:-.05em}
+  .heroProfileBar .heroKeywords > span[aria-hidden]{display:inline;margin:0 1px;color:var(--coral);font-size:3px}
 
   .section{padding:45px 18px}
   .sectionHeader{margin-bottom:28px}
