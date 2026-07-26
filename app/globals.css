@@ -256,8 +256,9 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
 /* Mobile-only scale and hero rhythm */
 @media (max-width:560px) {
   body{width:100%;zoom:1}
+  .topBrand{letter-spacing:-.05em;transform:scaleX(.9);transform-origin:left center}
   .hero{display:block;min-height:clamp(255px,71vw,278px);padding:0 14px}
-  .heroArt{top:0;bottom:0;height:auto;background-position:right -38px top 14px;background-size:auto clamp(200px,58vw,226px);opacity:.82}
+  .heroArt{top:0;bottom:0;height:auto;background-position:right -38px top 34px;background-size:auto clamp(200px,58vw,226px);opacity:.82}
   .heroShapes{-webkit-mask-image:radial-gradient(ellipse 13% 18% at 8% 15%,#000 52%,transparent 76%),radial-gradient(ellipse 13% 20% at 86% 83%,#000 53%,transparent 77%);mask-image:radial-gradient(ellipse 13% 18% at 8% 15%,#000 52%,transparent 76%),radial-gradient(ellipse 13% 20% at 86% 83%,#000 53%,transparent 77%)}
   .heroCopy{max-width:62%;padding:35px 0 70px}
   .heroCopy .eyebrow{margin-left:0;font-size:7px;line-height:1.45;letter-spacing:.05em}
@@ -269,9 +270,9 @@ footer { padding:36px var(--page-gutter); display:grid; grid-template-columns:1f
   .heroPersonNameDesktop{display:inline}
   .heroProfileBar .heroRole .heroPersonNameMobile{display:none}
   .heroProfileBar .heroText{font-size:8px;line-height:1.5}
-  .heroProfileBar .heroKeywords{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:0;width:100%;margin-top:0;white-space:nowrap}
-  .heroProfileBar .heroKeywords .heroKeywordItem{display:inline;padding:0 1px;background:none;border:0;border-radius:0;text-align:left;font-size:6px;line-height:1.45;letter-spacing:-.06em}
-  .heroProfileBar .heroKeywords > span[aria-hidden]{display:inline;margin:0 1px;color:var(--coral);font-size:6px}
+  .heroProfileBar .heroKeywords{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:0;width:100%;margin-top:0;white-space:nowrap;transform:scaleX(.85);transform-origin:right center}
+  .heroProfileBar .heroKeywords .heroKeywordItem{display:inline;padding:0 1px;background:none;border:0;border-radius:0;text-align:left;font-size:5px;line-height:1.45;letter-spacing:-.05em}
+  .heroProfileBar .heroKeywords > span[aria-hidden]{display:inline;margin:0 1px;color:var(--coral);font-size:5px}
 
   .section{padding:45px 18px}
   .sectionHeader{margin-bottom:28px}
