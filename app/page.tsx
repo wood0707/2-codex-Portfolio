@@ -32,10 +32,10 @@ const practicalTeachingExperiences = [
 ];
 
 const programs = [
-  ["PROGRAM 01", "AI 기반 업무 효율화", "구글 워크스페이스와 생성형 AI를 활용해 문서 작성과 반복 업무를 간소화하고, Gems 기반의 맞춤형 AI 비서와 챗봇을 구축하여 실무 프로세스의 효율을 높이는 교육입니다."],
-  ["PROGRAM 02", "AI 콘텐츠 기획 및 제작", "생성형 AI를 활용해 아이디어를 발굴하고, 카드뉴스·포스터·이미지 콘텐츠 등 다양한 시각 콘텐츠로 구체화하는 실습 중심 교육입니다."],
-  ["PROGRAM 03", "AI 영상·숏폼 제작", "스토리 구성부터 이미지 생성, 영상 제작, 음성·음악 활용, 편집까지 AI 영상과 숏폼 콘텐츠를 완성하는 실습 중심 교육입니다."],
-  ["PROGRAM 04", "AI 광고·브랜드 마케팅", "브랜드 정체성과 타깃을 분석하고, 마케팅 전략을 바탕으로 광고 메시지와 홍보 콘텐츠를 기획·제작하는 실습 중심 교육입니다."],
+  ["program-automation", "PROGRAM 01", "AI 기반 업무 효율화", "구글 워크스페이스와 생성형 AI를 활용해 문서 작성과 반복 업무를 간소화하고, Gems 기반의 맞춤형 AI 비서와 챗봇을 구축하여 실무 프로세스의 효율을 높이는 교육입니다.", "✦", "card1"],
+  ["program-content", "PROGRAM 02", "AI 콘텐츠 기획 및 제작", "생성형 AI를 활용해 아이디어를 발굴하고, 카드뉴스·포스터·이미지 콘텐츠 등 다양한 시각 콘텐츠로 구체화하는 실습 중심 교육입니다.", "◌", "card2"],
+  ["program-video", "PROGRAM 03", "AI 영상·숏폼 제작", "스토리 구성부터 이미지 생성, 영상 제작, 음성·음악 활용, 편집까지 AI 영상과 숏폼 콘텐츠를 완성하는 실습 중심 교육입니다.", "↗", "card3"],
+  ["program-branding", "PROGRAM 04", "AI 광고·브랜드 마케팅", "브랜드 정체성과 타깃을 분석하고, 마케팅 전략을 바탕으로 광고 메시지와 홍보 콘텐츠를 기획·제작하는 실습 중심 교육입니다.", "◎", "card4"],
 ];
 
 const brandWorkTitles = ["펀빌 · 퍼스널 브랜딩", "그로우로그 · 퍼스널 브랜딩", "오라트 · 퍼스널 브랜딩", "하리어스 · 퍼스널 브랜딩", "아임 프로 · 퍼스널 브랜딩", "그로우로그 · 퍼스널 브랜딩", "태권도 브랜드 아이덴티티", "디자인 프리즘 브랜드 아이덴티티", "루니브 · 퍼스널 브랜딩", "오픈지 · 퍼스널 브랜딩", "로그 포뮬러 · 퍼스널 브랜딩", "퍼럭스 · 퍼스널 브랜딩"];
@@ -86,7 +86,6 @@ export default function Home() {
   const [submitError, setSubmitError] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [inquiryOpen, setInquiryOpen] = useState(false);
-  const [activeSkill, setActiveSkill] = useState<number | null>(null);
   const worksCarouselRef = useRef<HTMLDivElement>(null);
   const videoCarouselRef = useRef<HTMLDivElement>(null);
   const reviewsCarouselRef = useRef<HTMLDivElement>(null);
@@ -182,7 +181,7 @@ export default function Home() {
           <span /><span /><span />
         </button>
         <div className={`navLinks ${menuOpen ? "open" : ""}`}>
-          <a href="#about" onClick={() => setMenuOpen(false)}>소개</a><a href="#skills" onClick={() => setMenuOpen(false)}>강의</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>소개</a><a href="#skills" onClick={() => setMenuOpen(false)}>교육분야</a>
           <a href="#programs" onClick={() => setMenuOpen(false)}>커리큘럼</a><a href="#works" onClick={() => setMenuOpen(false)}>포트폴리오</a>
           <button className="navCta navInquiry" type="button" onClick={() => { setMenuOpen(false); setInquiryOpen(true); }}>문의하기</button>
         </div>
@@ -190,6 +189,9 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroArt" aria-hidden="true" />
+        <div className="heroShapes" aria-hidden="true" />
+        <div className="heroBottomPurpleShape" aria-hidden="true" />
+        <div className="heroShapesLeft" aria-hidden="true" />
         <div className="heroCopy" id="about">
           <p className="eyebrow">AI 콘텐츠 교육 &amp; 워크플로우 아키텍트</p>
           <h1>
@@ -201,14 +203,14 @@ export default function Home() {
         </div>
         <div className="heroProfileBar" onClick={(event) => event.stopPropagation()}>
           <p className="heroRole">AI 콘텐츠 전문 강사 <span className="heroSeparator">·</span> <span className="heroPersonName heroPersonNameDesktop">오&nbsp;&nbsp;&nbsp;영&nbsp;&nbsp;&nbsp;주</span><span className="heroPersonName heroPersonNameMobile">오 영 주</span></p>
-          <nav className="heroKeywords" aria-label="주요 교육 분야" onClick={(event) => event.stopPropagation()} onMouseLeave={() => setActiveSkill(null)}>
-            <a href="#skill-content" onMouseEnter={() => setActiveSkill(0)} onFocus={() => setActiveSkill(0)} onBlur={() => setActiveSkill(null)}>콘텐츠 기획</a>
+          <nav className="heroKeywords" aria-label="주요 교육 분야" onClick={(event) => event.stopPropagation()}>
+            <span className="heroKeywordItem">AI 업무 자동화</span>
             <span aria-hidden="true">/</span>
-            <a href="#skill-automation" onMouseEnter={() => setActiveSkill(4)} onFocus={() => setActiveSkill(4)} onBlur={() => setActiveSkill(null)}>업무 자동화</a>
+            <span className="heroKeywordItem">AI 콘텐츠 기획</span>
             <span aria-hidden="true">/</span>
-            <a href="#skill-video" onMouseEnter={() => setActiveSkill(2)} onFocus={() => setActiveSkill(2)} onBlur={() => setActiveSkill(null)}>AI 영상</a>
+            <span className="heroKeywordItem">AI 영상·숏폼</span>
             <span aria-hidden="true">/</span>
-            <a href="#skill-branding" onMouseEnter={() => setActiveSkill(1)} onFocus={() => setActiveSkill(1)} onBlur={() => setActiveSkill(null)}>퍼스널 브랜딩</a>
+            <span className="heroKeywordItem">퍼스널 브랜딩</span>
           </nav>
         </div>
       </section>
@@ -219,12 +221,8 @@ export default function Home() {
           <h2>핵심 역량 및 <em>교육 분야</em></h2>
         </header>
         <div className="skillGrid">
-          {skills.map((skill, index) => (
-            <article
-              id={index === 0 ? "skill-content" : index === 1 ? "skill-branding" : index === 2 ? "skill-video" : index === 4 ? "skill-automation" : undefined}
-              className={`skillCard ${activeSkill === index ? "isKeywordActive" : ""}`}
-              key={skill}
-            ><span aria-hidden="true" /><h3>{skill}</h3></article>
+          {skills.map((skill) => (
+            <article className="skillCard" key={skill}><span aria-hidden="true" /><h3>{skill}</h3></article>
           ))}
         </div>
       </section>
@@ -264,7 +262,7 @@ export default function Home() {
       <section className="section programs" id="programs">
         <header className="sectionHeader compact staticHeader"><p>Section 04 · Programs</p><h2><span>핵심 프로그램</span> <em>구성</em></h2><p className="sectionIntro">학습자의 목표와 현장에 맞춰 네 가지 프로그램을 유연하게 구성합니다.</p></header>
         <div className="programGrid">
-          {programs.map(([label, title, desc], index) => <article className={`programCard card${index + 1}`} key={label}><span>{label}</span><div className="programIcon">{["✦", "◌", "↗", "◎"][index]}</div><h3>{title}</h3><p>{desc}</p></article>)}
+          {programs.map(([id, label, title, desc, icon, theme]) => <article id={id} className={`programCard ${theme}`} key={id}><span>{label}</span><div className="programIcon">{icon}</div><h3>{title}</h3><p>{desc}</p></article>)}
         </div>
       </section>
 
