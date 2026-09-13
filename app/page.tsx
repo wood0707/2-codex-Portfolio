@@ -31,6 +31,14 @@ const practicalTeachingExperiences = [
   "기관·학교·기업 대상 생성형 AI 활용 특강 다수 진행",
 ];
 
+const recentTeachingExperiences = [
+  "(재)서울현대교육재단 · IT 인턴, 경영사무 인턴 사전 직무 교육",
+  "대한민국 생활체육인재개발원\n국제심판 로드맵 · AI를 활용한 나만의 포트폴리오 작성",
+  "SIE 국제학교 · 인공지능(AI) 체험",
+  "동구여자중학교 · AI 영상 콘텐츠 제작(숏폼)",
+  "신성중학교(미술 동아리) · AI 활용 나만의 로고 & 굿즈 제작",
+];
+
 const programs = [
   ["program-automation", "PROGRAM 01", "AI 기반 업무 효율화", "구글 워크스페이스와 생성형 AI를 활용해 문서 작성과 반복 업무를 간소화하고, Gems 기반의 맞춤형 AI 비서와 챗봇을 구축하여 실무 프로세스의 효율을 높이는 교육입니다.", "✦", "card1"],
   ["program-content", "PROGRAM 02", "AI 콘텐츠 기획 및 제작", "생성형 AI를 활용해 아이디어를 발굴하고, 카드뉴스·포스터·이미지 콘텐츠 등 다양한 시각 콘텐츠로 구체화하는 실습 중심 교육입니다.", "◌", "card2"],
@@ -188,7 +196,9 @@ export default function Home() {
       </nav>
 
       <section className="hero" id="top">
-        <div className="heroArt" aria-hidden="true" />
+        <div className="heroPortraitFrame" aria-hidden="true">
+          <img className="heroArt" src="/youngjoo-portrait-arms.png" alt="" />
+        </div>
         <div className="heroShapes" aria-hidden="true" />
         <div className="heroBottomPurpleShape" aria-hidden="true" />
         <div className="heroShapesLeft" aria-hidden="true" />
@@ -199,10 +209,10 @@ export default function Home() {
             <span className="heroMiddle">콘텐츠를 성과로 만드는</span>
             <span className="lavender">생성형 AI 교육 전문가</span>
           </h1>
-          <div className="heroText heroLeadText"><p>생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상, 업무 효율화, 바이브코딩까지 폭넓은 실무 교육을 진행합니다.</p></div>
+          <div className="heroText heroLeadText"><p><span>생성형 AI 콘텐츠 제작부터 퍼스널 브랜딩, 숏폼 영상,</span><span>업무 효율화, 바이브코딩까지 폭넓은 실무 교육을 진행합니다.</span></p></div>
         </div>
         <div className="heroProfileBar" onClick={(event) => event.stopPropagation()}>
-          <p className="heroRole">AI 콘텐츠 전문 강사 <span className="heroSeparator">·</span> <span className="heroPersonName heroPersonNameDesktop">오&nbsp;&nbsp;&nbsp;영&nbsp;&nbsp;&nbsp;주</span><span className="heroPersonName heroPersonNameMobile">오 영 주</span></p>
+          <p className="heroRole">AI 콘텐츠 전문 강사 <span className="heroPersonName heroPersonNameDesktop">오&nbsp;&nbsp;&nbsp;영&nbsp;&nbsp;&nbsp;주</span><span className="heroPersonName heroPersonNameMobile">오 영 주</span></p>
           <nav className="heroKeywords" aria-label="주요 교육 분야" onClick={(event) => event.stopPropagation()}>
             <span className="heroKeywordItem">AI 업무 자동화</span>
             <span aria-hidden="true">/</span>
@@ -233,10 +243,10 @@ export default function Home() {
           <h2>주요 <em>경력</em></h2>
         </header>
         <div className="experienceWrap">
-          <p className="sectionIntro experienceIntro">교육, 디자인, 생성형 AI를 연결해 현장 중심의 배움을 설계합니다.</p>
           <div className="experienceColumns">
             <article className="experienceGroup"><h3><span>01</span> 주요 활동 및 직책</h3><ol className="experienceList">{keyRoles.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></article>
             <article className="experienceGroup"><h3><span>02</span> 실무 및 강의 경력</h3><ol className="experienceList">{practicalTeachingExperiences.map((item, index) => <li key={`${index}-${item}`}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.split("\n").map((line, lineIndex) => <span className="experienceLine" key={`${lineIndex}-${line}`}>{line}</span>)}</strong></li>)}</ol></article>
+            <article className="experienceGroup"><h3><span>03</span> 최근 출강 이력</h3><ol className="experienceList">{recentTeachingExperiences.map((item, index) => <li key={`${index}-${item}`}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.split("\n").map((line, lineIndex) => <span className="experienceLine" key={`${lineIndex}-${line}`}>{line}</span>)}</strong></li>)}</ol></article>
           </div>
         </div>
       </section>
@@ -275,7 +285,7 @@ export default function Home() {
       </section>
 
       <section className="section works" id="works">
-        <header className="sectionHeader compact"><p>Section 06 · Participant Works</p><h2>참여자 <em>작품</em></h2><p className="sectionIntro">배운 것을 실제 결과물로 완성하는 프로젝트형 교육을 지향합니다.</p></header>
+        <header className="sectionHeader compact"><p>Section 06 · Participant Works</p><h2>참여자 <em>작품</em></h2></header>
         <h3 className="worksSubheading"><span className="subheadingDot" aria-hidden="true">•</span> AI 비주얼 · 아이덴티티 디자인</h3>
         <div className="worksCarouselWrap">
           <button className="worksArrow worksArrowPrev" type="button" aria-label="이전 작품 보기" onClick={() => worksCarouselRef.current?.scrollBy({ left: -390, behavior: "smooth" })}>〈</button>
