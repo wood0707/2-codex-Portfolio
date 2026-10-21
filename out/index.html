@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오영주 포트폴리오 · Glass Bento Concept</title>
-    <link rel="stylesheet" href="./styles.css?v=20261020-25" />
+    <link rel="stylesheet" href="./styles.css?v=20261021-38" />
   </head>
   <body>
     <div class="ambient ambient-a"></div>
@@ -12,12 +12,19 @@
     <div class="ambient ambient-c"></div>
 
     <header class="glass-nav">
-      <a class="header-instructor" href="#top">AI 콘텐츠 전문 강사 <i>·</i> <strong>오 영 주</strong></a>
+      <a class="header-identity" href="#top">
+        <span class="brand-mark">OY</span>
+        <span class="header-instructor">AI 콘텐츠 전문 강사 <i>·</i> <strong>오 영 주</strong></span>
+      </a>
       <div class="nav-actions">
         <nav aria-label="주요 메뉴">
           <a href="#about">소개</a>
-          <a href="#skills">교육분야</a>
-          <a href="#programs">커리큘럼</a>
+          <span class="header-menu-divider" aria-hidden="true">/</span>
+          <a href="#experience">강의 경력</a>
+          <span class="header-menu-divider" aria-hidden="true">/</span>
+          <a href="#programs">핵심 프로그램</a>
+          <span class="header-menu-divider" aria-hidden="true">/</span>
+          <button class="header-inquiry-button" type="button" data-inquiry-modal>문의하기</button>
         </nav>
       </div>
     </header>
@@ -81,10 +88,10 @@
             <div class="card-watermark">ACTIVITIES</div>
           </article>
 
-          <article class="bento-card career-card">
+          <article class="bento-card career-card" id="experience">
               <section class="experience-block">
                 <div class="card-topline"><span>02</span><small>MAJOR EXPERIENCE</small></div>
-              <h3>교육 및 실무 역량</h3>
+              <h3>강의 및 실무 경력</h3>
                 <div class="career-list teaching-list">
                   <div><b>01</b><span>MBC아카데미컴퓨터학원 · 훈련교사</span></div>
                   <div><b>02</b><span>(재)서울현대교육재단 · IT 직무 교육</span></div>
@@ -123,7 +130,7 @@
 
           <article class="bento-card stat-card stat-coral">
             <small>TEACHING PARTNERS</small>
-            <strong>20+</strong>
+            <strong>30+</strong>
             <p>기업 · 기관 교육</p>
           </article>
 
@@ -174,16 +181,17 @@
       </section>
 
       <section class="partners-section" id="partners">
-        <div class="partners-copy">
-          <div class="partners-title">
-            <p class="section-kicker">EDUCATION PARTNERS</p>
-            <h2><span>교육</span> 기관</h2>
-          </div>
-          <p>학교·기관·기업 현장에서 생성형 AI 실무 교육을 함께했습니다.</p>
-        </div>
         <div class="partner-glass" aria-label="교육기관 로고 캐러셀">
-          <div class="logo-marquee">
-            <div class="logo-track">
+          <div class="partners-copy">
+            <div class="partners-title">
+              <p class="section-kicker">EDUCATION PARTNERS</p>
+              <h2><span>교육</span> 기관</h2>
+            </div>
+            <p>학교·기관·기업 현장에서 생성형 AI 실무 교육을 함께했습니다.</p>
+          </div>
+          <div class="logo-marquee-viewport">
+            <div class="logo-marquee">
+              <div class="logo-track">
               <span class="logo-item logo-wide"><img src="./institutions/kssi.png" alt="한국서비스표준진흥원" /></span>
               <span class="logo-item"><img src="./institutions/mbc-academy.png" alt="MBC 아카데미" /></span>
               <span class="logo-item logo-wide"><img src="./institutions/korean-sports-olympic.png" alt="대한체육회" /></span>
@@ -192,7 +200,7 @@
               <span class="logo-item logo-wide"><img src="./institutions/paju-welfare-center.png" alt="파주시장애인종합복지관" /></span>
               <span class="logo-item logo-wide"><img src="./institutions/the-nurim-platform.png" alt="더누림플랫폼" /></span>
             </div>
-            <div class="logo-track" aria-hidden="true">
+              <div class="logo-track" aria-hidden="true">
               <span class="logo-item logo-wide"><img src="./institutions/kssi.png" alt="" /></span>
               <span class="logo-item"><img src="./institutions/mbc-academy.png" alt="" /></span>
               <span class="logo-item logo-wide"><img src="./institutions/korean-sports-olympic.png" alt="" /></span>
@@ -200,6 +208,7 @@
               <span class="logo-item"><img src="./institutions/green-computer-academy.png" alt="" /></span>
               <span class="logo-item logo-wide"><img src="./institutions/paju-welfare-center.png" alt="" /></span>
               <span class="logo-item logo-wide"><img src="./institutions/the-nurim-platform.png" alt="" /></span>
+              </div>
             </div>
           </div>
         </div>
