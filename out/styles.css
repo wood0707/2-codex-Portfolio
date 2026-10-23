@@ -134,6 +134,7 @@ a { color: inherit; text-decoration: none; }
 .hero-instructor-line i { margin:0 8px; color:var(--coral); font-style:normal; }
 .hero-instructor-line strong { font-weight:800; letter-spacing:.08em; }
 .hero-actions { display:flex; gap:12px; margin-top:80px; }
+.hero-actions-mobile { display:none; }
 .button { padding:16px 21px; border:0; border-radius:17px; color:inherit; font-family:inherit; font-size:15px; font-weight:650; transition:.25s; cursor:pointer; }
 .button:hover { transform:translateY(-3px); }
 .button-primary { color:#fff; background:linear-gradient(135deg,#ef6b68,#d96591); box-shadow:0 13px 28px rgba(224,92,105,.26); }
@@ -338,7 +339,7 @@ a { color: inherit; text-decoration: none; }
 .modal-intro { font-size:19px; }
 .curriculum-list li { font-size:21px; }
 .modal-keywords { font-size:19px; }
-#web-program-modal h2 { font-size:39px; }
+#web-program-modal h2 { font-size:35px; }
 
 footer {
   width:min(1420px,calc(100% - 44px));
@@ -408,12 +409,12 @@ footer small { font-size:16px; }
   .eyebrow i { width:22px; flex:0 0 auto; }
   .hero h1 { margin:18px 0; font-size:clamp(24px,7vw,29px); line-height:1.08; letter-spacing:-.06em; }
   .hero h1 span { white-space:nowrap; word-break:keep-all; overflow-wrap:normal; }
-  .hero-description { font-size:17px; line-height:1.65; }
+  .hero-description { font-size:17px; line-height:1.45; }
   .hero-description br { display:none; }
   .hero-instructor-line { margin-top:0; font-size:16px; }
   .hero-actions { margin-top:38px; flex-direction:column; align-items:center; }
   .button { text-align:center; }
-  .hero-visual { height:340px; margin-top:30px; }
+  .hero-visual { height:340px; margin-top:0; }
   .liquid-frame { width:min(290px,82vw); max-width:100%; }
   .orbit-one { left:-8%; }
   .chip-top { right:0; padding:11px 13px; font-size:13px; }
@@ -469,7 +470,8 @@ footer small { font-size:16px; }
   .curriculum-list li { font-size:17px; }
   .modal-keywords { font-size:16px; }
   #web-program-modal h2 { font-size:29px; }
-  .inquiry-modal { width:calc(100% - 24px); border-radius:24px; }
+  .inquiry-modal { width:calc(100% - 36px); max-height:calc(100dvh - 28px); border-radius:20px; }
+  .inquiry-modal .modal-close { top:12px; right:12px; width:32px; height:32px; font-size:20px; }
 
   /* Mobile-responsive type and flow: desktop sizing stays unchanged. */
   .glass-nav { height:46px; }
@@ -481,6 +483,8 @@ footer small { font-size:16px; }
   .hero-description { font-size:13px; line-height:1.45; }
   .button { padding:14px 18px; font-size:14px; }
   .hero-actions { margin-top:40px; }
+  .hero-copy .hero-actions { display:none; }
+  .hero-actions-mobile { display:flex; margin-top:12px; }
   .hero-actions .button { width:min(100%,360px); }
   .hero-actions .button-primary { padding:13.4px 14.2px; font-size:15.4px; }
   .hero-actions .button-glass { padding:13.4px 17.6px; font-size:16.2px; }
@@ -506,22 +510,30 @@ footer small { font-size:16px; }
   .footer-contact { padding:10px 12px; font-size:10.5px; }
   .program-modal { width:calc(100% - 12px); padding:24px 15px; border-radius:19px; }
   .program-modal .section-kicker { font-size:10px; letter-spacing:0; }
-  .program-modal h2 { padding-right:26px; font-size:18px; }
+  .program-modal h2 { padding-right:26px; font-size:19px; }
   .program-modal .modal-close { top:12px; right:14px; width:25px; height:25px; font-size:17px; }
   .modal-intro { margin:11px 0 13px; font-size:9px; line-height:1.4; }
-  .curriculum-list li { grid-template-columns:30px 1fr; gap:6px; padding:9px 0; font-size:11px; }
-  .curriculum-list b { font-size:11px; }
+  .curriculum-list li { grid-template-columns:30px 1fr; gap:6px; padding:9px 0; font-size:16px; }
+  .curriculum-list b { font-size:12px; }
   .automation-track { padding:0; }
   .automation-track + .automation-track { margin-top:14px; }
   .automation-track h3 { margin-bottom:5px; color:var(--violet); font-size:12px; }
   .modal-keywords { margin-top:15px; padding:9px 11px; border-radius:10px; font-size:10px; }
-  #web-program-modal h2 { font-size:15px; letter-spacing:-.065em; white-space:nowrap; }
-  .inquiry-lead h2 { font-size:30px; }
-  .inquiry-lead > p:not(.section-kicker) { margin:16px 0 24px; font-size:15px; }
-  .inquiry-form label { font-size:14px; }
-  .inquiry-form input,.inquiry-form select,.inquiry-form textarea { font-size:16px; }
-  .inquiry-submit { font-size:16px; }
-  .inquiry-status { font-size:14px; }
+  #web-program-modal h2 { font-size:16px; letter-spacing:-.065em; white-space:nowrap; }
+  .inquiry-lead,.inquiry-form { padding:22px 18px; }
+  .inquiry-modal .section-kicker { margin-bottom:8px; font-size:10px; letter-spacing:.16em; }
+  .inquiry-lead h2 { font-size:24px; }
+  .inquiry-lead > p:not(.section-kicker) { margin:10px 0 16px; font-size:12px; line-height:1.55; }
+  .inquiry-benefits { gap:7px; }
+  .inquiry-benefits div { padding:9px 11px; gap:10px; border-radius:11px; }
+  .inquiry-benefits strong { font-size:13px; }
+  .inquiry-benefits span { font-size:12px; }
+  .inquiry-form { gap:12px; }
+  .inquiry-form-row { gap:10px; }
+  .inquiry-form label { gap:5px; font-size:12px; }
+  .inquiry-form input,.inquiry-form select,.inquiry-form textarea { padding:10px 11px; border-radius:10px; font-size:14px; }
+  .inquiry-submit { padding:11px 15px; font-size:13px; }
+  .inquiry-status { font-size:12px; }
 }
 
 .hero.section-shell { border-radius:38px; }
