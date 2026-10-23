@@ -125,7 +125,7 @@ a { color: inherit; text-decoration: none; }
 .hero.section-shell { border-radius:38px 38px 0 0; }
 .hero::before { content:""; position:absolute; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.85),rgba(237,193,226,.36) 42%,rgba(139,79,196,.08) 70%); right:18%; top:5%; filter:blur(8px); }
 .hero-copy { position: relative; z-index: 3; padding-left: 12px; container-type:inline-size; transform:translateY(-4px); }
-.eyebrow { display:flex; align-items:center; gap:10px; color:var(--ink); font-size:21px; font-weight:800; transform:translateY(-8px); }
+.eyebrow { display:flex; align-items:center; gap:10px; color:var(--ink); font-size:22px; font-weight:800; transform:translateY(-8px); }
 .eyebrow i { width:26px; height:8px; border-radius:99px; background:linear-gradient(90deg,var(--coral),#ffb07e); box-shadow:0 3px 10px rgba(239,107,104,.35); }
 .hero h1 { margin:30px 0; font-family:"Gmarket Sans","Pretendard Variable",Pretendard,"Noto Sans KR",sans-serif; font-size:clamp(42px,calc(3.4vw + 2px),60px); font-size:clamp(42px,calc(9cqi + 2px),64px); line-height:1.13; letter-spacing:-.045em; font-weight:700; transform:scaleX(.95); transform-origin:left center; }
 .hero h1 span { display:block; white-space:nowrap; }
@@ -329,16 +329,20 @@ a { color: inherit; text-decoration: none; }
 .mini-proof p { font-size:16px; }
 .mini-proof strong { font-size:17px; }
 .career-list div { font-size:18px; }
+.awards-list div { font-size:19px; }
 .skill-cloud span { font-size:17px; }
 .skills-card > p { font-size:18px; }
 .stat-card p { font-size:17px; }
 .program-copy p { font-size:17px; }
 .program-stack div { font-size:17px; }
-.program-stack button { font-size:18px; }
+.program-stack button { font-size:19px; }
 .book-copy p { font-size:18px; }
 .book-copy > span { font-size:17px; }
 .partners-copy > p:last-child { font-size:17px; }
 .modal-intro { font-size:19px; }
+@media (min-width:901px) {
+  #web-program-modal .modal-intro { font-size:17px; }
+}
 .curriculum-list li { font-size:21px; }
 .modal-keywords { font-size:19px; }
 #web-program-modal h2 { font-size:35px; }
@@ -437,6 +441,7 @@ footer small { font-size:16px; }
   .section-heading { display:block; }
   .section-heading h2 { font-size:30px; }
   .section-heading > p { margin-top:18px; }
+  #bento .section-heading { margin-bottom:20px; }
   .career-card,.skills-card,.stat-card,.program-card { grid-column:span 12; padding:30px 22px; }
   .card-topline span { font-size:13px; }
   .card-topline small { font-size:10px; }
@@ -516,26 +521,30 @@ footer small { font-size:16px; }
   .program-modal .modal-close { top:12px; right:14px; width:25px; height:25px; font-size:17px; }
   .modal-intro { margin:11px 0 13px; font-size:9px; line-height:1.4; }
   .curriculum-list li { grid-template-columns:30px 1fr; gap:6px; padding:9px 0; font-size:16px; }
+  #web-program-modal .curriculum-list li:first-child { font-size:15px; }
   .curriculum-list b { font-size:12px; }
   .automation-track { padding:0; }
   .automation-track + .automation-track { margin-top:14px; }
   .automation-track h3 { margin-bottom:5px; color:var(--violet); font-size:12px; }
   .modal-keywords { margin-top:15px; padding:9px 11px; border-radius:10px; font-size:10px; }
-  #web-program-modal h2 { font-size:16px; letter-spacing:-.065em; white-space:nowrap; }
-  .inquiry-lead,.inquiry-form { padding:22px 18px; }
-  .inquiry-modal .section-kicker { margin-bottom:8px; font-size:10px; letter-spacing:.16em; }
-  .inquiry-lead h2 { font-size:24px; }
-  .inquiry-lead > p:not(.section-kicker) { margin:10px 0 16px; font-size:12px; line-height:1.55; }
-  .inquiry-benefits { gap:7px; }
+  #web-program-modal h2 { font-size:17px; letter-spacing:-.065em; white-space:nowrap; }
+  .inquiry-modal { width:calc(100% - 20px); max-height:calc(100dvh - 16px); }
+  .inquiry-lead { padding:14px 16px 12px; }
+  .inquiry-form { padding:12px 16px 14px; }
+  .inquiry-modal .section-kicker { margin-bottom:5px; font-size:9px; letter-spacing:.14em; }
+  .inquiry-lead h2 { font-size:22px; }
+  .inquiry-lead > p:not(.section-kicker) { margin:6px 0 0; font-size:11px; line-height:1.4; }
+  .inquiry-benefits { display:none; }
   .inquiry-benefits div { padding:9px 11px; gap:10px; border-radius:11px; }
   .inquiry-benefits strong { font-size:13px; }
   .inquiry-benefits span { font-size:12px; }
-  .inquiry-form { gap:12px; }
-  .inquiry-form-row { gap:10px; }
-  .inquiry-form label { gap:5px; font-size:12px; }
-  .inquiry-form input,.inquiry-form select,.inquiry-form textarea { padding:10px 11px; border-radius:10px; font-size:14px; }
-  .inquiry-submit { padding:11px 15px; font-size:13px; }
-  .inquiry-status { font-size:12px; }
+  .inquiry-form { gap:8px; }
+  .inquiry-form-row { grid-template-columns:1fr 1fr; gap:8px; }
+  .inquiry-form label { gap:3px; font-size:11px; }
+  .inquiry-form input,.inquiry-form select,.inquiry-form textarea { padding:8px 9px; border-radius:9px; font-size:13px; }
+  .inquiry-form textarea { min-height:60px; height:60px; }
+  .inquiry-submit { padding:9px 13px; font-size:13px; }
+  .inquiry-status { min-height:0; font-size:11px; }
 }
 
 .hero.section-shell { border-radius:38px; }
