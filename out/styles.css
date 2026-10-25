@@ -337,9 +337,9 @@ a { color: inherit; text-decoration: none; }
 .book-copy p { font-size:18px; }
 .book-copy > span { font-size:17px; }
 .partners-copy > p:last-child { font-size:17px; }
-.modal-intro { font-size:19px; }
-@media (min-width:901px) {
-  #web-program-modal .modal-intro { font-size:17px; }
+.modal-intro { font-size:16px; }
+@media (min-width:681px) {
+  #web-program-modal .modal-intro { font-size:14px; }
 }
 .curriculum-list li { font-size:21px; }
 .modal-keywords { font-size:19px; }
